@@ -1,3 +1,88 @@
-<html>
-    <h1>Simon Kloker</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Profile</title>
+    <!-- Import Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Import Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .sidebar-nav {
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <ul id="slide-out" class="sidenav sidebar-nav">
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#social-links">Social Links</a></li>
+    </ul>
+    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Introduction Section -->
+        <section id="intro" class="section">
+            <div class="row">
+                <div class="col s12 m6">
+                    <h2>About Me</h2>
+                    <p>Hello! I'm a passionate professional with expertise in various fields. Welcome to my personal profile page.</p>
+                </div>
+                <div class="col s12 m6">
+                    <img src="path_to_your_image.jpg" alt="Profile Image" class="profile-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- CV Section -->
+        <section id="cv" class="section">
+            <h2>Curriculum Vitae</h2>
+            <ul class="collection">
+                <li class="collection-item">Education: Degree in XYZ, University of ABC</li>
+                <li class="collection-item">Experience: Worked at XYZ Company as ABC</li>
+                <li class="collection-item">Skills: Skill 1, Skill 2, Skill 3</li>
+            </ul>
+        </section>
+
+        <!-- Social Links Section -->
+        <section id="social-links" class="section">
+            <h2>Social Links</h2>
+            <div class="row">
+                <div class="col s12">
+                    <a href="#!" class="btn"><i class="material-icons left">link</i>LinkedIn</a>
+                    <a href="#!" class="btn"><i class="material-icons left">link</i>Twitter</a>
+                    <a href="#!" class="btn"><i class="material-icons left">link</i>GitHub</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="footer-copyright">
+            <div class="container">
+                © 2025 Simon Kloker
+            </div>
+        </div>
+    </footer>
+
+    <!-- Import Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+    </script>
+</body>
 </html>
