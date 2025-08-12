@@ -1,6 +1,6 @@
 ---
 permalink: /bwi302/course_outline/
-title: "Markdown"
+title: "BWI302 Prozessmanagement"
 author_profile: false
 redirect_from: 
   - /bwi302/
@@ -18,6 +18,8 @@ Basic information
 | Location           | C - Gebäude - C1.011         |
 | Examination Mode   | Project and Presentation     |
 | Language           | German                       |
+
+Further details can be found in the [https://www.hwg-lu.de/fileadmin/user_upload/fachbereiche/fachbereich-3/Wirtschaftsinformatik/Downloads/BWI_Modulhandbuch.pdf](BWI Modulhandbuch). 
 
 Learning Objectives
 ======
