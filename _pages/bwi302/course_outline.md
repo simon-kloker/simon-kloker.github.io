@@ -39,16 +39,22 @@ Course Outline
 | Week | Date in WT 25/26 | Topic | Key Concepts | Notes |
 |:-----:|:------------:|:-----------------------------------------------|:-----------------------------------------------|:-----------------------------------------------|
 | 1 | 2025-09-29 | Einführung in das (Geschäfts-)Prozessmanagement (BPM) | Prozess, Funktion, Workflow |  |
-| 2 | 2025-10-06 | Konzepte des Prozessmanagements | Prozessmanagement, Ziele, Rollen |  |
-| 3 | 2025-10-13 | Prozessmodellierung mit EPK | EPK, Ereignisse, Funktionen, Verknüpfungen |  |
-| 4 | 2025-10-20 | Prozessmodellierung mit UML | UML, Aktivitätsdiagramm, Swimlanes |  |
-| 5 | 2025-10-27 | Prozessmodellierung mit BPMN | BPMN, Modellierungselemente, Kollaboration | Details and Topics for Project (Examination) |
-| 6 | 2025-11-03 | Weitere Methoden der Prozeßmodellierung im Überblick | Vergleich Modellierungsmethoden, Auswahlkriterien |  |
-| 7 | 2025-11-10 | Geschäftsprozeßoptimierung: Ist-Analyse, Schwachstellenanalyse, Sollkonzeptentwicklung | Ist-Analyse, Schwachstellen, Sollkonzept |  |
+| 2 | 2025-10-06 | Konzepte und Methoden des Prozessmanagements
+ | Prozesswürfel und Strukturelemente, Optimierungsansätze, Vorgehensweisen |  |
+| 3 | 2025-10-13 | Modeling and Analysis of Processes: Einführung  | |  |
+| 4 | 2025-10-20 | Modeling and Analysis of Processes: EPK | | |
+| 5 | 2025-10-27 | Modeling and Analysis of Processes: UML | | |
+| 6 | 2025-11-03 | Modeling and Analysis of Processes: BPMN | BPMN, Modellierungselemente, Kollaboration | Details and Topics for Project (Examination) |
+| 7 | 2025-11-10 | Weitere Themen der Prozessmodellierung im Überblick | Simulation... |  |
 | 8 | 2025-11-17 | Business Process Management | BPM, Lebenszyklus, Werkzeuge |  |
-| 9 | 2025-11-24 | Projektarbeit / Präsentationsvorbereitung | Projektarbeit, Präsentationstechnik | Projektarbeit |
-| 10 | 2025-12-01 | Projektarbeit / Präsentationsvorbereitung | Projektarbeit, Präsentationstechnik | Projektarbeit |
-| 11 | 2025-12-08 | Projektarbeit / Präsentationsvorbereitung | Projektarbeit, Präsentationstechnik | Projektarbeit |
-| 12 | 2025-12-15 | Prozess-Implementierung und Prozess-Roll-Out | Implementierung, Roll-Out, Change Management |  |
+| 9 | 2025-11-24 | Process Control, Ist-Analyse, Schwachstellenanalyse, Sollkonzeptentwicklung | | |
+| 10 | 2025-12-01 | IT Support for Process Management |  |  |
+| 11 | 2025-12-08 | Puffer |  | Diskussion offener Fragen zum Projekt |
+| 12 | 2025-12-15 | Präsentationen | Präsentation, Feedback |  |
 | 13 | 2025-12-22 | Präsentationen | Präsentation, Feedback |  |
 | 14 | 2026-01-05 | Einführung in Process Mining | Process Mining, Techniken, | |
+
+
+IT Support for Process Management
+
+| 7 | 2025-11-10 | Geschäftsprozeßoptimierung: Ist-Analyse, Schwachstellenanalyse, Sollkonzeptentwicklung | Ist-Analyse, Schwachstellen, Sollkonzept |  |
