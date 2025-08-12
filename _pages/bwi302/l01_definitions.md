@@ -10,6 +10,13 @@ Unternehmensprozess nach Hammer und Champy
 ======
 Hammer und Champy definieren den Unternehmensprozess als eine Menge von Aktivitäten, für die ein oder mehrere unterschiedliche Inputs benötigt werden und die für den Kunden ein Ergebnis von Wert erzeugen (Hammer und Champy 1994). Als Beispiel nennen sie die Entwicklung eines neuen Produkts. Gesteuert wird ein Unternehmensprozess durch einen Prozessverantwortlichen, der dem Kreis der oberen Managementebene entstammen soll.
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 Geschäftsprozess nach Scheer und Jost
 ======
 Scheer und Jost verstehen unter einem Geschäftsprozess die modellhafte Beschreibung der in einem Unternehmen durchzuführenden Funktionen in ihrer inhaltlichen und zeitlichen Abhängigkeit (vgl. Scheer und Jost 1996). Unter Funktionen werden einzelne Aufgaben und Tätigkeiten verstanden, die über auslösende bzw. erzeugte Ereignisse miteinander verknüpft werden. Scheer stellt den Begriff des Geschäftsprozesses den Begriffen der Prozesskette und der Vorgangskette gleich (vgl. Scheer 1990) und betont damit den funktionsübergreifenden Charakter des Geschäftsprozesses, der sich über mehrere Funktionsschritte hinweg erstreckt.
