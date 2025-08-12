@@ -17,54 +17,33 @@ Education
 
 Expericence abroad
 ======
-* Uganda, Consultant in Development Cooperation, (2023-2025, 2 years)
+* Uganda, International Development Cooperation, (2023-2025, 2 years)
 * Brazil, Semester abroad (2014, 3 months)
 * South Africa, Semester abroad (2012, 3 months)
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* Consultant in International Development Cooperation for AI and IoT (2023-2025)
+  * [Coworkers Professionals](https://coworkers.de/en/professionals/professionals/)
+  * Partner: Ndejje University (Uganda)
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Consultant for AI (2021-2023)
+  * Diakonie Baden e.V.
+  * Project: [puslnetz KI](https://gesund.pulsnetz.de/ki-projekt/)
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Research Group Lead "Business Data Analytics" (2018-2021)
+  * Institute for Information Systems and Marketing, Karlsruhe Institute of Technology (Prof. Weinhardt)
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+* Research Assistant (2015-2018)
+  * Institute for Information Systems and Marketing, Karlsruhe Institute of Technology (Prof. Weinhardt)
+
+* IT Application Supporter (2013-2015)
+  * Geberit Verwaltungs GmbH
+  * 50% Position besides my Masters Studies
+
+* Working Student (2010-2013)
+  * Geberit Verwaltungs GmbH
+  * Practice-integrated Postgraduate Degree
+
   
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+
