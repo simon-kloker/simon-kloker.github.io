@@ -21,13 +21,34 @@ Geschäftsprozess nach Scheer und Jost
 ======
 Scheer und Jost verstehen unter einem Geschäftsprozess die modellhafte Beschreibung der in einem Unternehmen durchzuführenden Funktionen in ihrer inhaltlichen und zeitlichen Abhängigkeit (vgl. Scheer und Jost 1996). Unter Funktionen werden einzelne Aufgaben und Tätigkeiten verstanden, die über auslösende bzw. erzeugte Ereignisse miteinander verknüpft werden. Scheer stellt den Begriff des Geschäftsprozesses den Begriffen der Prozesskette und der Vorgangskette gleich (vgl. Scheer 1990) und betont damit den funktionsübergreifenden Charakter des Geschäftsprozesses, der sich über mehrere Funktionsschritte hinweg erstreckt.
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 Geschäftsprozess nach Österle
 ======
 Nach Österle ist der Geschäftsprozess eine Abfolge von Aufgaben, die über mehrere organisatorische Einheiten verteilt sein können und deren Ausführung von informationstechnologischen Anwendungen unterstützt wird (vgl. Österle 1995). Ein Prozess ist zugleich Produzent und Konsument von Leistungen und verfolgt von der Prozessführung gesetzte Ziele. Als spezielle Form der Ablauforganisation konkretisiert der Geschäftsprozess die Geschäftsstrategie und verknüpft sie mit dem Informationssystem. Daher kann der Geschäftsprozess als Bindeglied zwischen der Unternehmensstrategie und der Systementwicklung bzw. den unterstützenden Informationssystemen gesehen werden.
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 Gehring
 ======
 Ein Geschäftsprozess ist eine zielgerichtete, zeitlich-logische Abfolge von Aufgaben, die arbeitsteilig von mehreren Organisationen oder Organisationseinheiten unter Nutzung von Informations- und Kommunikationstechnologien ausgeführt werden können. Er dient der Erstellung von Leistungen entsprechend den vorgegebenen, aus der Unternehmensstrategie abgeleiteten Prozesszielen. Ein Geschäftsprozess kann formal auf unterschiedlichen Detaillierungsebenen und aus mehreren Sichten beschrieben werden. Ein maximaler Detaillierungsgrad der Beschreibung ist dann erreicht, wenn die ausgewiesenen Aufgaben je in einem Zug von einem Mitarbeiter ohne Wechsel des Arbeitsplatzes ausgeführt werden können (vgl. Gehring 1998).
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 Berkau
 ======

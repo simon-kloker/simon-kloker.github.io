@@ -19,7 +19,7 @@ Basic information
 | Examination Mode   | Project and Presentation     |
 | Language           | German                       |
 
-Further details can be found in the [https://www.hwg-lu.de/fileadmin/user_upload/fachbereiche/fachbereich-3/Wirtschaftsinformatik/Downloads/BWI_Modulhandbuch.pdf](BWI Modulhandbuch). 
+Further details can be found in the [BWI Modulhandbuch](https://www.hwg-lu.de/fileadmin/user_upload/fachbereiche/fachbereich-3/Wirtschaftsinformatik/Downloads/BWI_Modulhandbuch.pdf). 
 
 Learning Objectives
 ======
@@ -38,7 +38,8 @@ Course Outline
 
 | Week | Date in WT 25/26 | Topic | Key Concepts | Notes |
 |:-----:|:------------:|:-----------------------------------------------|:-----------------------------------------------|:-----------------------------------------------|
-| 1 | 2025-09-29 | Grundlagen: Prozesse und Funktionen | Prozess, Funktion, Wertschöpfung |  |
+| 1 | 2025-09-29 | Einführung in das (Geschäfts-)Prozessmanagement (BPM) 
+ | Prozess, Funktion, Workflow |  |
 | 2 | 2025-10-06 | Konzepte des Prozessmanagements | Prozessmanagement, Ziele, Rollen |  |
 | 3 | 2025-10-13 | Prozessmodellierung mit EPK | EPK, Ereignisse, Funktionen, Verknüpfungen |  |
 | 4 | 2025-10-20 | Prozessmodellierung mit UML | UML, Aktivitätsdiagramm, Swimlanes |  |
