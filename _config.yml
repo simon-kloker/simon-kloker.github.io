@@ -25,9 +25,9 @@ author:
   avatar           : "profile.png"
   name             : "Dr. Simon Kloker"
   pronouns         : # example: "she/her"  
-  bio              : # "Short biography for the left-hand sidebar"
+  bio              : "Ehemann, Vater und Dozent"
   location         : # "Earth"
-  employer         : "Hochschule für Gesellschaft und Wirtschaft Ludwigshafen"
+  employer         : "HGW Ludwigshafen"
   uri              : # URL
   email            : "simon.kloker@mail.de" 
 
