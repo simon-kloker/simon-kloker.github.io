@@ -23,13 +23,13 @@ repository               : "simon-kloker/simon-kloker.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "Dr. Simon Kloker"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  bio              : # "Short biography for the left-hand sidebar"
+  location         : # "Earth"
+  employer         : "Hochschule für Gesellschaft und Wirtschaft Ludwigshafen"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "simon.kloker@mail.de" 
 
   # Academic websites
   academia         : # URL

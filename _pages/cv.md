@@ -11,9 +11,15 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* Dr. rer. pol. in Information Systems, Karlsruhe Institute of Technology, 2018
+* M.Sc. in Wirtschaftsinformatik, Würzburg University, 2015
+* B.Sc. in Wirtschaftsinformatik, DHBW Ravensburg, 2013
+
+Expericence abroad
+======
+* Uganda, Consultant in Development Cooperation, (2023-2025, 2 years)
+* Brazil, Semester abroad (2014, 3 months)
+* South Africa, Semester abroad (2012, 3 months)
 
 Work experience
 ======
