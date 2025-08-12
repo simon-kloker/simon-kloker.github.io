@@ -38,8 +38,7 @@ Course Outline
 
 | Week | Date in WT 25/26 | Topic | Key Concepts | Notes |
 |:-----:|:------------:|:-----------------------------------------------|:-----------------------------------------------|:-----------------------------------------------|
-| 1 | 2025-09-29 | Einführung in das (Geschäfts-)Prozessmanagement (BPM) 
- | Prozess, Funktion, Workflow |  |
+| 1 | 2025-09-29 | Einführung in das (Geschäfts-)Prozessmanagement (BPM) | Prozess, Funktion, Workflow |  |
 | 2 | 2025-10-06 | Konzepte des Prozessmanagements | Prozessmanagement, Ziele, Rollen |  |
 | 3 | 2025-10-13 | Prozessmodellierung mit EPK | EPK, Ereignisse, Funktionen, Verknüpfungen |  |
 | 4 | 2025-10-20 | Prozessmodellierung mit UML | UML, Aktivitätsdiagramm, Swimlanes |  |
