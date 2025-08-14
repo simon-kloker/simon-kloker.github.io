@@ -18,15 +18,9 @@ author_profile: true
 
 {% for semester in semesters %}
   <h2>{{ semester }}</h2>
-  <ul>
-    {% for post in courses %}
-      {% if post.semester == semester %}
-        <li>
-          <a href="{{ post.url }}">{{ post.title }}</a>
-        </li>
-
-        {% include archive-single.html %}
-      {% endif %}
-    {% endfor %}
-  </ul>
+  {% for post in courses %}
+    {% if post.semester == semester %}
+      {% include archive-single.html %}
+    {% endif %}
+  {% endfor %}
 {% endfor %}

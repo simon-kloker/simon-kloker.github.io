@@ -10,6 +10,8 @@ redirect_from:
   - /bwi302/course_outline.html
 ---
 
+Would this now be hte excerpt?
+
 Basic information
 ======
 
