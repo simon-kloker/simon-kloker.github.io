@@ -1,10 +1,11 @@
 ---
-permalink: /bwi302/course_outline/
-title: "BWI302 Prozessmanagement"
+permalink: /mw310/course_outline/
+title: "MW310 Data Enigeering"
+semester: "2025 Winter Term"
 author_profile: false
 redirect_from: 
-  - /bwi302/
-  - /bwi302/course_outline.html
+  - /mw310/
+  - /mw310/course_outline.html
 ---
 
 Basic information
@@ -14,7 +15,7 @@ Basic information
 |--------------------|------------------------------|
 | Lecturer           | Dr. Simon Kloker             |
 | Semester           | Winter 2025/26               |
-| Dates              | Mondays, 10:00–11:30         |
+| Dates              | Blocked                      |
 | Location           | C - Gebäude - C1.011         |
 | Examination Mode   | Project and Presentation     |
 | Language           | German                       |
