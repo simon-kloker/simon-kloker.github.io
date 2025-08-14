@@ -7,11 +7,11 @@ author_profile: true
 
 {% include base_path %}
 
-{% comment %} 
+
 {% for post in site.teaching reversed %}
   {% include archive-single.html %}
 {% endfor %}
-{% endcomment %}
+
 
 {% assign courses = site.teaching_hgw | where_exp: "item", "item.path contains 'course_outline.md'" | sort: "semester" | reverse %}
 {% assign semesters = courses | map: "semester" | uniq %}
