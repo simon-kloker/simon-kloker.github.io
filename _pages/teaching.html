@@ -10,3 +10,23 @@ author_profile: true
 {% for post in site.teaching reversed %}
   {% include archive-single.html %}
 {% endfor %}
+
+
+{% assign teaching_dirs = site.static_files | where_exp: "file", "file.path contains '_teaching/' and file.path ends_with: '/course_outline.md'" %}
+
+{% for file in teaching_dirs %}
+  {% capture course_url %}
+    {{ file.path | remove: '_teaching' | remove: 'course_outline.md' | prepend: '/teaching/' }}
+  {% endcapture %}
+  <article class="teaching-course">
+    <h2>
+      <a href="{{ course_url | strip }}">
+        {{ course_url | split: '/' | last | replace: '-', ' ' | capitalize }}
+      </a>
+    </h2>
+    {% assign course_content = file.path | prepend: site.source | read_file %}
+    <div class="course-outline">
+      {{ course_content | markdownify }}
+    </div>
+  </article>
+{% endfor %}

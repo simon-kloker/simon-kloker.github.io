@@ -1,6 +1,6 @@
 ---
 permalink: /bwi302/l01_definitions/
-title: "BWI302 Prozessmanagement"
+title: "BWI302 Prozessmanagement - Interaktiver Part"
 author_profile: false
 redirect_from: 
   - /bwi302/l01_definitions.html
