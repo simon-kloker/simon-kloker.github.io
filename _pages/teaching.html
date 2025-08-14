@@ -7,10 +7,11 @@ author_profile: true
 
 {% include base_path %}
 
+{% comment %} 
 {% for post in site.teaching reversed %}
   {% include archive-single.html %}
 {% endfor %}
-
+{% endcomment %}
 
 {% assign courses = site.teaching_hgw | where_exp: "item", "item.path contains 'course_outline.md'" | sort: "semester" | reverse %}
 {% assign semesters = courses | map: "semester" | uniq %}
@@ -18,10 +19,10 @@ author_profile: true
 {% for semester in semesters %}
   <h2>{{ semester }}</h2>
   <ul>
-    {% for course in courses %}
-      {% if course.semester == semester %}
+    {% for post in courses %}
+      {% if post.semester == semester %}
         <li>
-          <a href="{{ course.url }}">{{ course.title }}</a>
+          <a href="{{ post.url }}">{{ post.title }}</a>
         </li>
 
         {% include archive-single.html %}
