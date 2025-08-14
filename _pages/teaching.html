@@ -13,11 +13,8 @@ author_profile: true
 
 
 {% assign courses = site.teaching_hgw | where_exp: "item", "item.path contains 'course_outline.md'" | sort: "semester" | reverse %}
-
-Total courses: {{ courses | size }}
-
 {% assign semesters = courses | map: "semester" | uniq %}
-<h1>Courses Offered</h1>
+
 {% for semester in semesters %}
   <h2>{{ semester }}</h2>
   <ul>
@@ -26,6 +23,8 @@ Total courses: {{ courses | size }}
         <li>
           <a href="{{ course.url }}">{{ course.title }}</a>
         </li>
+
+        {% include archive-single.html %}
       {% endif %}
     {% endfor %}
   </ul>
