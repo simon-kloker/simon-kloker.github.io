@@ -12,7 +12,10 @@ author_profile: true
 {% endfor %}
 
 
-{% assign courses = site.teaching_hgw | where: "name", "course_outline.md" | sort: "semester" | reverse %}
+{% assign courses = site.teaching_hgw | where_exp: "item", "item.path contains 'course_outline.md'" | sort: "semester" | reverse %}
+
+Total courses: {{ courses | size }}
+
 {% assign semesters = courses | map: "semester" | uniq %}
 <h1>Courses Offered</h1>
 {% for semester in semesters %}
