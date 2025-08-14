@@ -12,21 +12,18 @@ author_profile: true
 {% endfor %}
 
 
-{% assign teaching_dirs = site.static_files | where_exp: "file", "file.path contains '_teaching/' and file.path ends_with: '/course_outline.md'" %}
+{% assign courses = site.teaching_hgw | sort: "semester" | reverse %}
+{% assign semesters = courses | map: "semester" | uniq %}
 
-{% for file in teaching_dirs %}
-  {% capture course_url %}
-    {{ file.path | remove: '_teaching' | remove: 'course_outline.md' | prepend: '/teaching/' }}
-  {% endcapture %}
-  <article class="teaching-course">
-    <h2>
-      <a href="{{ course_url | strip }}">
-        {{ course_url | split: '/' | last | replace: '-', ' ' | capitalize }}
-      </a>
-    </h2>
-    {% assign course_content = file.path | prepend: site.source | read_file %}
-    <div class="course-outline">
-      {{ course_content | markdownify }}
-    </div>
-  </article>
+{% for semester in semesters %}
+  <h2>{{ semester }}</h2>
+  <ul>
+    {% for course in courses %}
+      {% if course.semester == semester %}
+        <li>
+          <a href="{{ course.url }}">{{ course.title }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
 {% endfor %}
