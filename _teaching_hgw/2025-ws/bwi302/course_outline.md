@@ -2,6 +2,8 @@
 permalink: /bwi302/course_outline/
 title: "BWI302 Prozessmanagement"
 semester: "2025 Winter Term"
+type: "Undergraduate course"
+collection: teaching_hgw
 author_profile: false
 redirect_from: 
   - /bwi302/
