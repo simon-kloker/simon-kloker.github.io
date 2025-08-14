@@ -231,7 +231,7 @@ collections:
     permalink: /:collection/:path/
   teaching_hgw:
     output: true
-    permalink: /teaching_hgw/:path/
+    permalink: /:collection/:path/
 
 
 # These settings control how pages and collections are included in the site

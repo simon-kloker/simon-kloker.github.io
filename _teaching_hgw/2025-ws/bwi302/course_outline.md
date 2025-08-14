@@ -12,8 +12,6 @@ redirect_from:
 
 Would this now be hte excerpt?
 
-
-
 Basic information
 ======
 
