@@ -22,6 +22,8 @@ author_profile: true
     {% if post.semester == semester %}
       {% assign lines = post.content | split: '\r\n' %} 
       {% assign excerpt_line = lines[0] %} 
+      {{ excerpt_line }}
+      ---
       {% include archive-single.html excerpt=excerpt_line %}
     {% endif %}
   {% endfor %}
