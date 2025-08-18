@@ -20,11 +20,9 @@ author_profile: true
   <h2>{{ semester }}</h2>
   {% for post in courses %}
     {% if post.semester == semester %}
-      {% assign lines = post.content | split: '\r\n' %} 
-      {% assign excerpt_line = lines[0] %} 
-      {{ excerpt_line }}
-      ---
-      {% include archive-single.html excerpt=excerpt_line %}
+      <h2 class="archive__item-title" itemprop="headline">
+        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ post.title }}</a>
+    </h2>
     {% endif %}
   {% endfor %}
 {% endfor %}
