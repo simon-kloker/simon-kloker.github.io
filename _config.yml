@@ -263,6 +263,15 @@ defaults:
       author_profile: true
       share: true
       comments: true
+  # _teaching_hgw
+  - scope:
+      path: ""
+      type: teaching_hgw
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      comments: false
   # _publications
   - scope:
       path: ""
