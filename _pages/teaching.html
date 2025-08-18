@@ -20,7 +20,9 @@ author_profile: true
   <h2>{{ semester }}</h2>
   {% for post in courses %}
     {% if post.semester == semester %}
-      {% include archive-single.html excerpt=post.excerpt %}
+      {% assign lines = post.content | split: '\r\n' %} 
+      {% assign excerpt_line = lines[0] %} 
+      {% include archive-single.html excerpt=excerpt_line %}
     {% endif %}
   {% endfor %}
 {% endfor %}
