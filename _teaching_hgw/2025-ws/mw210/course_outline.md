@@ -9,7 +9,6 @@ redirect_from:
   - /mw310/
   - /mw310/course_outline.html
 ---
-
 Short excerpt
 
 Basic information

@@ -9,8 +9,7 @@ redirect_from:
   - /bwi302/
   - /bwi302/course_outline.html
 ---
-
-Die Teilnehmer:innen analysieren und optimieren Geschäftsprozesse mit Methoden wie EPK, UML, BPMN und Process Mining.
+Wir analysieren und optimieren Geschäftsprozesse mit Methoden wie EPK, UML, BPMN und Process Mining.
 
 Basic information
 ======

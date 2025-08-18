@@ -7,7 +7,7 @@ author_profile: true
 
 {% include base_path %}
 
-{% commment %}
+{% comment %}
 {% for post in site.teaching reversed %}
   {% include archive-single.html %}
 {% endfor %}
@@ -20,9 +20,7 @@ author_profile: true
   <h2>{{ semester }}</h2>
   {% for post in courses %}
     {% if post.semester == semester %}
-      {% assign lines = post.content | split: '\r\n' %} 
-      {% assign excerpt_line = lines[0] %} 
-      {% include archive-single.html excerpt=excerpt_line %}
+      {% include archive-single.html excerpt=post.excerpt %}
     {% endif %}
   {% endfor %}
 {% endfor %}
