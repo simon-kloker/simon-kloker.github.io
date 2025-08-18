@@ -9,7 +9,11 @@ redirect_from:
   - /mw310/
   - /mw310/course_outline.html
 ---
-Short excerpt
+
+This is a description of a teaching experience. You can use markdown like any other post.
+
+Heading 1
+======
 
 Basic information
 ======
