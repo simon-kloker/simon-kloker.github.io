@@ -18,11 +18,13 @@ author_profile: true
 
 {% for semester in semesters %}
   <h2>{{ semester }}</h2>
+  <ul>
   {% for post in courses %}
     {% if post.semester == semester %}
-      <h2 class="archive__item-title" itemprop="headline">
+      <li>
         <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ post.title }}</a>
-    </h2>
+      </li>
     {% endif %}
   {% endfor %}
+  </ul>
 {% endfor %}
