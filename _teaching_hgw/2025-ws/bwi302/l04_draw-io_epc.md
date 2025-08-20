@@ -9,7 +9,7 @@ redirect_from:
 draw.io
 ======
 
-![draw.io Logo](/images/bwi302/draw-io.svg)
+<img src="/images/bwi302/draw-io.svg" alt="draw.io Logo" style="max-width:300px; width:100%; height:auto;">
 
 **draw.io** (now also known as diagrams.net) is a free, browser-based diagramming tool that enables users to create a wide variety of diagrams such as flowcharts, process models, network diagrams, and organizational charts. It offers an intuitive drag-and-drop interface, supports collaborative editing, and allows saving diagrams locally or to cloud storage services like Google Drive and OneDrive.
 
