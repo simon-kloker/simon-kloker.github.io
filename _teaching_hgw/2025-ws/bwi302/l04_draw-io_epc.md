@@ -2,7 +2,8 @@
 permalink: /bwi302/l04_draw-io_epc/
 title: "BWI302 Prozessmanagement - Interaktiver Part"
 author_profile: false
-nav: false
+previous: false
+next: false
 redirect_from: 
   - /bwi302/l04_draw-io_epc.html
 ---
