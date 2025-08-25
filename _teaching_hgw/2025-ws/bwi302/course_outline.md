@@ -43,9 +43,9 @@ Course Outline
 |:-----:|:------------:|:-----------------------------------------------|:-----------------------------------------------|:-----------------------------------------------|
 | 1 | 2025-09-29 | Einführung in das (Geschäfts-)Prozessmanagement (BPM) | Prozess, Funktion, Workflow |  |
 | 2 | 2025-10-06 | Konzepte und Methoden des Prozessmanagements | Prozesswürfel und Strukturelemente, Optimierungsansätze, Vorgehensweisen |  |
-| 3 | 2025-10-13 | Modellierung und Analyse von Prozessen: Einführung  | Grundlegende Fragen der Modellierung, Prozesslandkartn, Prozessbeschreibung, Tabellarische PRozessmodellierung, Swimlane Diagramm |  |
-| 4 | 2025-10-20 | Modeling and Analysis of Processes: EPK | | |
-| 5 | 2025-10-27 | Modeling and Analysis of Processes: UML und BPMN | BPMN, Modellierungselemente, Kollaboration | |
+| 3 | 2025-10-13 | Modellierung und Analyse von Prozessen: Einführung  | Grundlegende Fragen der Modellierung, Prozesslandkarten, Prozessbeschreibung, Tabellarische Prozessmodellierung, Swimlane Diagramm | Have your Laptop with you. In case we have time left, we will step up a modelling environment. |
+| 4 | 2025-10-20 | Modeling and Analysis of Processes: EPC | | Have a set-up modelling environment with you. |
+| 5 | 2025-10-27 | Modeling and Analysis of Processes: UML und BPMN | BPMN, Modellierungselemente, Kollaboration | Have a set-up modelling environment with you. |
 | 6 | 2025-11-03 | Modeling and Analysis of Processes: Hands-on BPMN |  | Details and Topics for Project (Examination) |
 | 7 | 2025-11-10 | Weitere Themen der Prozessmodellierung im Überblick | Simulation... |  |
 | 8 | 2025-11-17 | Business Process Management | BPM, Lebenszyklus, Werkzeuge |  |
