@@ -5,6 +5,7 @@ semester: "2025 Winter Term"
 type: "Undergraduate course"
 collection: teaching_hgw
 author_profile: false
+hide_pagination: true
 redirect_from: 
   - /bwi302/
   - /bwi302/course_outline.html
