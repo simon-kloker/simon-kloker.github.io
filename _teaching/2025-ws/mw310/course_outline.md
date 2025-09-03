@@ -44,19 +44,14 @@ Learning Objectives
 Course Outline
 ======
 
-| Week | Date in WT 25/26 | Topic | Key Concepts | Notes |
-|:-----:|:------------:|:-----------------------------------------------|:-----------------------------------------------|:-----------------------------------------------|
-| 1 | 2025-09-29 | Einführung in das (Geschäfts-)Prozessmanagement (BPM) | Prozess, Funktion, Workflow |  |
-| 2 | 2025-10-06 | Konzepte und Methoden des Prozessmanagements | Prozesswürfel und Strukturelemente, Optimierungsansätze, Vorgehensweisen |  |
-| 3 | 2025-10-13 | Modellierung und Analyse von Prozessen: Einführung  | |  |
-| 4 | 2025-10-20 | Modeling and Analysis of Processes: EPK | | |
-| 5 | 2025-10-27 | Modeling and Analysis of Processes: UML und BPMN | BPMN, Modellierungselemente, Kollaboration | |
-| 6 | 2025-11-03 | Modeling and Analysis of Processes: Hands-on BPMN |  | Details and Topics for Project (Examination) |
-| 7 | 2025-11-10 | Weitere Themen der Prozessmodellierung im Überblick | Simulation... |  |
-| 8 | 2025-11-17 | Business Process Management | BPM, Lebenszyklus, Werkzeuge |  |
-| 9 | 2025-11-24 | Process Control, Ist-Analyse, Schwachstellenanalyse, Sollkonzeptentwicklung | | |
-| 10 | 2025-12-01 | IT Support for Process Management |  |  |
-| 11 | 2025-12-08 | *Buffer in case some topics could not be finilized before* |  | Possibility to discuss open questions regarding the Project. |
-| 12 | 2025-12-15 | Präsentationen | Präsentation, Feedback | |
-| 13 | 2025-12-22 | Präsentationen | Präsentation, Feedback | |
-| 14 | 2026-01-05 | Einführung in Process Mining | Process Mining, Techniken, | ||
+| Week | Date in WT 25/26 | Topic |  Notes |
+|:-----:|:------------:|:-----------------------------------------------||:-----------------------------------------------|
+| 1 | 2025-10-01 (10:00 - 13:15) | tba | have your laptop with you  |
+| 2 | 2025-10-02 (10:00 - 13:15) | tba | have your laptop with you  |
+| 3 | 2025-10-08 (10:00 - 13:15) | tba | have your laptop with you  |
+| 4 | 2025-10-09 (10:00 - 17:30) | tba | online |
+| 5 | 2025-10-10 (10:00 - 13:15) | tba | have your laptop with you  |
+| 6 | 2025-10-15 (10:00 - 13:15) | tba | have your laptop with you  |
+| 7 | 2025-10-16 (10:00 - 17:30) | tba | online |
+| 8 | 2025-10-17 (10:00 - 13:15) | tba | have your laptop with you |
+| 8 | 2025-12-17 (10:00 - 13:15) | Final Presentations |  |

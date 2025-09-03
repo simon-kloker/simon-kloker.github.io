@@ -13,7 +13,7 @@ author_profile: true
 {% endfor %}
 {% endcomment %}
 
-{% assign courses = site.teaching_hgw | where_exp: "item", "item.path contains 'course_outline.md'" | sort: "semester" | reverse %}
+{% assign courses = site.teaching | where_exp: "item", "item.path contains 'course_outline.md'" | sort: "semester" | reverse %}
 {% assign semesters = courses | map: "semester" | uniq %}
 
 {% for semester in semesters %}
