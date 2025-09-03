@@ -3,7 +3,7 @@ permalink: /mw310/course_outline/
 title: "MW310 Data Engineering"
 semester: "2025 Winter Term"
 type: "Postgraduate course"
-collection: teaching_hgw
+collection: teaching
 author_profile: false
 redirect_from: 
   - /mw310/
