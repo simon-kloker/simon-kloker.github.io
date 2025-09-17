@@ -54,4 +54,4 @@ Course Outline
 | 6 | 2025-10-15 (10:00 - 13:15) | tba | have your laptop with you  |
 | 7 | 2025-10-16 (10:00 - 17:30) | tba | online |
 | 8 | 2025-10-17 (10:00 - 13:15) | tba | have your laptop with you |
-| 8 | 2025-12-17 (10:00 - 13:15) | Final Presentations |  |
+| 8 | 2025-12-17 (10:00 - 13:15) | Final Presentations | Room C1.005 |
