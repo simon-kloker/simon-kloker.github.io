@@ -42,19 +42,19 @@ Learning Objectives
 Course Outline
 ======
 
-| Week | Date in WT 25/26 | Topic | Key Concepts | Notes |
+| Week | Date in WT 25/26 | Topic | Notes |
 |:-----:|:------------:|:-----------------------------------------------|:-----------------------------------------------|:-----------------------------------------------|
-| 1 | 2025-09-29 | Einführung in das (Geschäfts-)Prozessmanagement (BPM) | Prozess, Funktion, Workflow |  |
-| 2 | 2025-10-06 | Konzepte und Methoden des Prozessmanagements | Prozesswürfel und Strukturelemente, Optimierungsansätze, Vorgehensweisen |  |
-| 3 | 2025-10-13 | Modellierung und Analyse von Prozessen: Einführung  | Grundlegende Fragen der Modellierung, Prozesslandkarten, Prozessbeschreibung, Tabellarische Prozessmodellierung, Swimlane Diagramm | Have your Laptop with you. In case we have time left, we will step up a modelling environment. |
-| 4 | 2025-10-20 | Modellierung und Analyse von Prozessen: EPK | Ereignisgesteuerte Prozessketten (EPK), eEPK, Hand-on Modelierung | Have a set-up modelling environment with you. (Microsoft Visio, draw.io or ARIS Express) |
-| 5 | 2025-10-27 | Modellierung und Analyse von Prozessen: UML und BPMN | BPMN, Modellierungselemente, Kollaboration | Have a set-up modelling environment with you. |
-| 6 | 2025-11-03 | Modeling and Analysis of Processes: Hands-on BPMN |  | Details and Topics for Project (Examination) |
-| 7 | 2025-11-10 | Weitere Themen der Prozessmodellierung im Überblick | Simulation... |  |
-| 8 | 2025-11-17 | Business Process Management | BPM, Lebenszyklus, Werkzeuge |  |
-| 9 | 2025-11-24 | Process Control, Ist-Analyse, Schwachstellenanalyse, Sollkonzeptentwicklung | | |
-| 10 | 2025-12-01 | IT Support for Process Management |  |  |
-| 11 | 2025-12-08 | *Buffer in case some topics could not be finilized before* |  | Possibility to discuss open questions regarding the Project. |
-| 12 | 2025-12-15 | Präsentationen | Präsentation, Feedback | |
-| 13 | 2025-12-22 | Präsentationen | Präsentation, Feedback | |
-| 14 | 2026-01-05 | Einführung in Process Mining | Process Mining, Techniken, | ||
+| 1 | 2025-09-29 | Einführung in das (Geschäfts-)Prozessmanagement (BPM) |
+| 2 | 2025-10-06 | Konzepte und Methoden des Prozessmanagements  |
+| 3 | 2025-10-13 | Modellierung und Analyse von Prozessen: Einführung   Have your Laptop with you. In case we have time left, we will step up a modelling environment. |
+| 4 | 2025-10-20 | Modellierung und Analyse von Prozessen: EPK | Have a set-up modelling environment with you. (Microsoft Visio, draw.io or ARIS Express) |
+| 5 | 2025-10-27 | Modellierung und Analyse von Prozessen: UML und BPMN  | Have a set-up modelling environment with you. |
+| 6 | 2025-11-03 | Modeling and Analysis of Processes: Hands-on BPMN |  Details and Topics for Project (Examination). Have a set-up modelling environment with you. |
+| 7 | 2025-11-10 | Weitere Themen der Prozessmodellierung im Überblick  |  |
+| 8 | 2025-11-17 | Business Process Management  |  |
+| 9 | 2025-11-24 | Process Controlling, Ist-Analyse, Schwachstellenanalyse, Sollkonzeptentwicklung | |
+| 10 | 2025-12-01 | IT Support for Process Management  |  |
+| 11 | 2025-12-08 | *Buffer in case some topics could not be finilized before*  | Possibility to discuss open questions regarding the Project. |
+| 12 | 2025-12-15 | Präsentationen | |
+| 13 | 2025-12-22 | Präsentationen | |
+| 14 | 2026-01-05 | Einführung in Process Mining | Process Mining, Techniken, | |
