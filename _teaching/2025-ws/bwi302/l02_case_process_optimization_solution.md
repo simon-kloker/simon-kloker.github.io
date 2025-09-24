@@ -2,6 +2,8 @@
 permalink: /bwi302/l02_case_process_optimization/
 title: "BWI302 Prozessmanagement - Interaktiver Part"
 author_profile: false
+hide_pagination: true
+share: false
 redirect_from: 
   - /bwi302/l02_case_process_optimization.html
 ---

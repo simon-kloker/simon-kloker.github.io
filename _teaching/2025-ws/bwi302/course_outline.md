@@ -8,6 +8,7 @@ date: "2025-09-29"
 collection: teaching
 author_profile: false
 hide_pagination: true
+share: false
 redirect_from: 
   - /bwi302/
   - /bwi302/course_outline.html
