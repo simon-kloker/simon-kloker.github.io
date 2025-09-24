@@ -57,4 +57,4 @@ Course Outline
 | 11 | 2025-12-08 | *Buffer in case some topics could not be finilized before*  | Possibility to discuss open questions regarding the Project. |
 | 12 | 2025-12-15 | Präsentationen | |
 | 13 | 2025-12-22 | Präsentationen | |
-| 14 | 2026-01-05 | Einführung in Process Mining | Process Mining, Techniken, | |
+| 14 | 2026-01-05 | Einführung in Process Mining |

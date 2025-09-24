@@ -5,6 +5,8 @@ semester: "2025 Winter Term"
 type: "Postgraduate course"
 collection: teaching
 author_profile: false
+hide_pagination: true
+share: false
 redirect_from: 
   - /mw310/
   - /mw310/course_outline.html
