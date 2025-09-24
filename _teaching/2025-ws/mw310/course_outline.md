@@ -10,11 +10,6 @@ redirect_from:
   - /mw310/course_outline.html
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
-
-Heading 1
-======
-
 Basic information
 ======
 
@@ -23,22 +18,11 @@ Basic information
 | Lecturer           | Dr. Simon Kloker             |
 | Semester           | Winter 2025/26               |
 | Dates              | Blocked                      |
-| Location           | C - Gebäude - C1.011         |
+| Location           | see OLAT        |
 | Examination Mode   | Project and Presentation     |
 | Language           | German                       |
 
 Further details can be found in the [BWI Modulhandbuch](https://www.hwg-lu.de/fileadmin/user_upload/fachbereiche/fachbereich-3/Wirtschaftsinformatik/Downloads/BWI_Modulhandbuch.pdf). 
-
-Learning Objectives
-======
-
-
-* Die Teilnehmer erkennen die Notwendigkeit der Analyse und Optimierung von Geschäftsprozessen.
-* Sie kennen die wichtigsten Methoden zur Modellierung von Sie kennen die wichtigsten Methoden zur Modellierung von Geschäftsprozessen
-* Sie können Geschäftsprozesse modellieren als Ereignis- gesteuerte Prozeßkette (EPK), als Aktivitätsdiagramm (UML) und mit Hilfe der Business Process Modelling Notation (BPMN).
-* Sie können die Vor- und Nachteile dieser und weiterer Modellierungsmethoden abwägen.
-* Sie können Schwachstellen und Verbesserungspotential in Geschäftsprozessen erkennen und daraus einen verbesserten Prozess entwickeln.
-* Sie können Gegenstand, Zielsetzung und basale Techniken des Process Mining erklären.
 
 
 Course Outline

@@ -43,10 +43,10 @@ Course Outline
 ======
 
 | Week | Date in WT 25/26 | Topic | Notes |
-|:-----:|:------------:|:-----------------------------------------------|:-----------------------------------------------|:-----------------------------------------------|
-| 1 | 2025-09-29 | Einführung in das (Geschäfts-)Prozessmanagement (BPM) |
-| 2 | 2025-10-06 | Konzepte und Methoden des Prozessmanagements  |
-| 3 | 2025-10-13 | Modellierung und Analyse von Prozessen: Einführung   Have your Laptop with you. In case we have time left, we will step up a modelling environment. |
+|:-----:|:------------:|:-----------------------------------------------|:-----------------------------------------------|
+| 1 | 2025-09-29 | Einführung in das (Geschäfts-)Prozessmanagement (BPM) | |
+| 2 | 2025-10-06 | Konzepte und Methoden des Prozessmanagements  | |
+| 3 | 2025-10-13 | Modellierung und Analyse von Prozessen: Einführung | Have your Laptop with you. In case we have time left, we will step up a modelling environment. |
 | 4 | 2025-10-20 | Modellierung und Analyse von Prozessen: EPK | Have a set-up modelling environment with you. (Microsoft Visio, draw.io or ARIS Express) |
 | 5 | 2025-10-27 | Modellierung und Analyse von Prozessen: UML und BPMN  | Have a set-up modelling environment with you. |
 | 6 | 2025-11-03 | Modeling and Analysis of Processes: Hands-on BPMN |  Details and Topics for Project (Examination). Have a set-up modelling environment with you. |
