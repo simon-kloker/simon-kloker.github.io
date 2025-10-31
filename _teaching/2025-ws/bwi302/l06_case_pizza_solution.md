@@ -8,7 +8,7 @@ redirect_from:
   - /bwi302/l06_case_pizza_solution.html
 ---
 
-Eine mögliche Lösung können Sie anschauen, wenn Sie folgende Spezifikation unter (https://www.bpmn-sketch-miner.ai/index.html)[BPMN Sketch Miner] einfügen.
+Eine mögliche Lösung können Sie anschauen, wenn Sie folgende Spezifikation unter [BPMN Sketch Miner](https://www.bpmn-sketch-miner.ai/index.html) einfügen.
 
 ```
 Kunde:
