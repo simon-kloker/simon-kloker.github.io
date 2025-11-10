@@ -50,10 +50,10 @@ Course Outline
 | 3 | 2025-10-13 | Modellierung und Analyse von Prozessen: Einführung | Have your Laptop with you. In case we have time left, we will step up a modelling environment. |
 | 4 | 2025-10-20 | Modellierung und Analyse von Prozessen: EPK | Have a set-up modelling environment with you. (Microsoft Visio, draw.io or ARIS Express) |
 | 5 | 2025-10-27 | Modellierung und Analyse von Prozessen: UML  | **Details and Topics for Project (Examination).** Have a set-up modelling environment with you. |
-| 6 | 2025-11-03 | Modeling and Analysis of Processes: BPMN I | Have a set-up modelling environment with you. |
-| 6 | 2025-11-10 | Modeling and Analysis of Processes: BPMN II | Have a set-up modelling environment with you. |
-| 8 | 2025-11-17 | Process Controlling |  |
-| 9 | 2025-11-24 | IT Support for Process Management | |
+| 6 | 2025-11-03 | Modellierung und Analyse von Prozessen: BPMN I | Have a set-up modelling environment with you. |
+| 6 | 2025-11-10 | Modellierung und Analyse von Prozessen: BPMN II | Have a set-up modelling environment with you. |
+| 8 | 2025-11-17 | Prozesscontrolling |  |
+| 9 | 2025-11-24 | IT-Unterstützung für das Prozessmanagement  | |
 | 10 | 2025-12-01 | Business Process Management (Weitere Themen)  |  |
 | 11 | 2025-12-08 | *Buffer in case some topics could not be finilized before*  | Possibility to discuss open questions regarding the Project. |
 | 12 | 2025-12-15 | Präsentationen | **We start at 8:00am** |
