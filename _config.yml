@@ -23,13 +23,13 @@ repository               : "simon-kloker/simon-kloker.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Dr. Simon Kloker"
+  name             : "Prof. Dr. Simon Kloker"
   pronouns         : # example: "she/her"  
   bio              : "in progess..."
   location         : # "Earth"
   employer         : "HWG Ludwigshafen"
   uri              : # URL
-  email            : "simon.kloker@lb.hwg-lu.de" 
+  email            : "simon.kloker@hwg-lu.de" 
 
   # Academic websites
   academia         : # URL
