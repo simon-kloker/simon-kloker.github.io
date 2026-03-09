@@ -1,5 +1,5 @@
 ---
-permalink: /bwi302/course_outline/
+permalink: /bwi302/2025-wt/course_outline/
 title: "BWI302 Prozessmanagement"
 semester: "2025 Winter Term"
 type: "Undergraduate course"
