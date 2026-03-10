@@ -1,7 +1,7 @@
 ---
 permalink: /bwi302/course_outline/
 title: "BWI302 Prozessmanagement"
-semester: "2026 Winter Term"
+semester: "2026 Summer Term"
 type: "Undergraduate course"
 venue: "HWG Ludwigshafen"
 date: "2026-03-09"
@@ -21,7 +21,7 @@ Basic information
 |--------------------|------------------------------|
 | Lecturer           | Dr. Simon Kloker             |
 | Semester           | Summer 2026               |
-| Dates              | Tuesdazs, 08:15–09:45         |
+| Dates              | Tuesdays, 08:15–09:45         |
 | Location           | Online         |
 | Examination Mode   | Project and Presentation     |
 | Language           | German                       |
@@ -56,6 +56,6 @@ Course Outline
 | 9 | 2026-05-05 | 08: IT-Unterstützung für das Prozessmanagement  | |
 | 10 | 2026-05-12 | 09: Einführung in Process Mining |  |
 | 11 | 2026-05-19 | 10: Business Process Management (Weitere Themen) | |
-| 12 | 2026-05-26 | Präsentationen | |
+| 12 | 2026-05-26 | Präsentationen | Doppeltermin |
 | 13 | 2026-06-02 | Präsentationen | |
-| 14 | 2026-06-09 | Präsentationen | |
+| 14 | 2026-06-09 | Präsentationen | entfällt vermutlich |
