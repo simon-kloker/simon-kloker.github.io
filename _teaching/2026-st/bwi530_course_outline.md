@@ -48,8 +48,8 @@ Course Outline
 | 4  | 01.04.2026 | 8:15–11:30 | Buffer + Power BI Topic Assignments | C1.001 |
 | 5  | 08.04.2026 | 8:15–11:30 | **04 - Data Modeling II: Advanced Modeling** | C1.001 |
 | 6  | 15.04.2026 | 8:15–11:30 | **05 - ETL/ELT Architecture** | C1.001 |
-| 7  | 22.04.2026 | 8:15–11:30 | Buffer + Q&A Power BI Topic Assignments | C1.001 |
-| 8  | 29.04.2026 | 8:15–11:30 | **06 - The WWI Data Warehouse** | C1.001 |
+| 7  | 22.04.2026 | 8:15–11:30 | **06 - The WWI Data Warehouse** | C1.001 |
+| 8  | 29.04.2026 | 8:15–11:30 | Buffer + Q&A Power BI Topic Assignments | C1.001 |
 | 9  | 06.05.2026 | 8:15–11:30 | **07 - Data Modeling III: Advanced Concepts** | C1.001 |
 | 10 | 13.05.2026 | 8:15–11:30 | **08 - Power BI: The Tabular Model and DAX Basics** | C1.001 |
 | 11 | 20.05.2026 | 8:15–11:30 | **09 - Modern BI: Governance & Security** | C1.001 |
