@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Prof.&nbsp;Dr.&nbsp;Simon Kloker">
+
+<title>BWI160 Programming 1 - 08 Classes</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="08_classes_files/libs/clipboard/clipboard.min.js"></script>
+<script src="08_classes_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="08_classes_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="08_classes_files/libs/quarto-html/popper.min.js"></script>
+<script src="08_classes_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="08_classes_files/libs/quarto-html/anchor.min.js"></script>
+<link href="08_classes_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="08_classes_files/libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="08_classes_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="08_classes_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="08_classes_files/libs/bootstrap/bootstrap-2138299df88874143c5a6e9e4c250161.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">BWI160 Programming 1 - 08 Classes</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Prof.&nbsp;Dr.&nbsp;Simon Kloker </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="housekeeping" class="level1">
+<h1>Housekeeping</h1>
+<section id="the-learning-pact" class="level2">
+<h2 class="anchored" data-anchor-id="the-learning-pact">The Learning Pact</h2>
+<p><a href="https://simon-kloker.github.io/files/the_learning_pact_slides.html#/">The Learning Pact</a></p>
+</section>
+<section id="be-aware-when" class="level2">
+<h2 class="anchored" data-anchor-id="be-aware-when">Be aware when…</h2>
+<ul>
+<li><strong>…copying ⿻ code from the script:</strong> Code in the script might contain unintended line breaks due to line overflows. This can cause syntax errors when copying and pasting. Always check for and remove any unintended line breaks after pasting code into your editor.</li>
+<li><strong>… using the German version 🥨 of this script (or any other language):</strong> The original script is in English. The other versions of the script were translated using AI. If you use a version in another language: Please double-check the translation for accuracy, especially for technical terms and code comments. Some nuances or specific programming terminology might not have been translated perfectly, which could lead to confusion when following the instructions or understanding the code. In case of uncertainty, refer back to the original English version of the script. It is the source of truth for the content and instructions provided in this lecture.</li>
+</ul>
+</section>
+<section id="source-disclaimer" class="level2">
+<h2 class="anchored" data-anchor-id="source-disclaimer">Source Disclaimer</h2>
+<p>Significant parts of this script/slides are copied or adapted from:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../img/PythonCrashCourse_comp.jpg" class="img-fluid figure-img" width="150"></p>
+<figcaption>Python Crash Course, 3rd Edition</figcaption>
+</figure>
+</div>
+<p><strong>Python Crash Course, 3rd Edition</strong></p>
+<p>A Hands-On, Project-Based Introduction to Programming</p>
+<p><em>by Eric Matthes</em></p>
+<p>December 2022, 552 pp.</p>
+<p>ISBN-13: 9781718502703</p>
+</section>
+<section id="around-the-world" class="level2">
+<h2 class="anchored" data-anchor-id="around-the-world">… around the world 🌍</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../img/world_map.png" class="img-fluid figure-img" width="400"></p>
+<figcaption>Map of the world</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="this-lectures-context-daniel-in-the-lions-den" class="level1">
+<h1>⛰️ This lecture’s context: Daniel in the Lions’ Den</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/daniel.jpg" class="img-fluid figure-img" width="400"></p>
+<figcaption>Daniel in the Lions’ Den, by Briton Rivière, 1872</figcaption>
+</figure>
+</div>
+</section>
+<section id="learning-objectives" class="level1">
+<h1>Learning Objectives</h1>
+<p><img src="../../shared/images/learning_objectives.png" class="img-fluid" width="80"></p>
+<p>In this lecture…</p>
+<ul>
+<li>… you’ll learn how classes represent real-world things and situations, and why OOP is an effective approach to writing software.</li>
+<li>… you’ll learn how to create objects (instances) from classes and understand how each instance is automatically equipped with the general behavior of the class.</li>
+<li>… you’ll learn how to store data in instances and define what actions (methods) can be taken with these instances.</li>
+<li>… you’ll learn to store classes in separate modules and import them.</li>
+<li>… you’ll develop a programmer’s perspective on code: understand not just what happens line by line, but also the bigger concepts and logic behind your programs.</li>
+</ul>
+</section>
+<section id="creating-and-using-a-class" class="level1">
+<h1>Creating and Using a Class</h1>
+<p>Classes are the foundation of Object-Oriented Programming (OOP) — a powerful way to <strong>model real-world objects and situations</strong> in code.</p>
+<p><strong>What is a class?</strong></p>
+<ul>
+<li>A <strong>set of instructions</strong> for how to create individual instances</li>
+<li>Defines the general behavior that a category of objects can have</li>
+<li>Each instance automatically gets this general behavior and can have unique traits</li>
+</ul>
+<section id="example-creating-a-lion-class" class="level2">
+<h2 class="anchored" data-anchor-id="example-creating-a-lion-class">Example: Creating a Lion Class</h2>
+<p><strong>Scenario:</strong> We need a class to represent a lion for a lion’s den - any lion in general.</p>
+<p>What do we know about lions?</p>
+<ul>
+<li>They have a name and an age</li>
+<li>Common behaviors: <strong>roar</strong> and <strong>pace</strong></li>
+</ul>
+<p>These attributes and behaviors will go in our <code>Lion</code> class.</p>
+<p><code>lion.py</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Lion:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""A simple model of a lion from the den."""</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Initialize name and age attributes."""</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> roar(<span class="va">self</span>):</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Simulate a lion roaring."""</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> lets out a mighty roar!"</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> pace(<span class="va">self</span>):</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Simulate a lion pacing in the den."""</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> paces back and forth nervously."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="understanding-the-class-structure" class="level2">
+<h2 class="anchored" data-anchor-id="understanding-the-class-structure">Understanding the Class Structure</h2>
+<p><strong>1. Class Definition</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Lion:</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>By convention, <strong>capitalized names</strong> refer to classes in Python</li>
+<li>No parentheses because we’re creating this class from scratch</li>
+</ul>
+<div class="fragment">
+<p><strong>2. The <code>__init__()</code> Method</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>A <strong>special method</strong> Python runs automatically when creating a new instance</li>
+<li><strong>Two underscores</strong> on each side prevent naming conflicts</li>
+<li>Always include <code>self</code> (“instance parameter”) as the first parameter</li>
+</ul>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Initialize name and age attributes."""</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>3. The <code>self</code> Parameter</strong></p>
+<ul>
+<li><strong>Required</strong> and must come first</li>
+<li>A reference to the instance itself</li>
+<li>Gives the instance access to attributes and methods in the class</li>
+<li>Automatically passed when creating or calling methods</li>
+</ul>
+<div class="fragment">
+<p><strong>4. Instance Attributes</strong></p>
+<ul>
+<li>Variables with the <code>self</code> prefix: <code>self.name</code>, <code>self.age</code></li>
+<li>Accessible through any instance created from the class</li>
+<li>Called <strong>attributes</strong></li>
+</ul>
+</div>
+<p><strong>5. Methods</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> roar(<span class="va">self</span>):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Simulate a lion roaring."""</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> lets out a mighty roar!"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> pace(<span class="va">self</span>):</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Simulate a lion pacing in the den."""</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> paces back and forth nervously."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><code>roar()</code> and <code>pace()</code> define the lion’s behaviors</li>
+<li>Each method has <code>self</code> as its only parameter</li>
+<li>Methods can be called on any instance</li>
+</ul>
+<p>💡 <strong>Notes:</strong></p>
+<ul>
+<li>The instance parameter is conventionally named <code>self</code>, but you can choose any name (e.g.&nbsp;<code>this</code>). However, using <code>self</code> is a widely followed convention that makes your code easier to read and understand for other programmers.</li>
+<li>The double underscores are called dunder (short for “double underscore”) or magic methods. They signal to Python that this method has a special, built-in meaning that Python itself knows about and calls automatically.</li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>When Python calls it automatically</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>__init__</code></td>
+<td>When creating an instance: <code>Lion('Mufasa', 12)</code></td>
+</tr>
+<tr class="even">
+<td><code>__str__</code></td>
+<td>When printing an object: <code>print(my_lion)</code></td>
+</tr>
+<tr class="odd">
+<td><code>__len__</code></td>
+<td>When calling <code>len(obj)</code></td>
+</tr>
+<tr class="even">
+<td><code>__add__</code></td>
+<td>When using <code>+</code> between two objects</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="making-an-instance-from-a-class" class="level2">
+<h2 class="anchored" data-anchor-id="making-an-instance-from-a-class">Making an Instance from a Class</h2>
+<p>Now let’s create an <strong>instance</strong> — a specific lion from the <code>Lion</code> class:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>my_lion <span class="op">=</span> Lion(<span class="st">'Mufasa'</span>, <span class="dv">12</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"My lion's name is </span><span class="sc">{</span>my_lion<span class="sc">.</span>name<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"My lion is </span><span class="sc">{</span>my_lion<span class="sc">.</span>age<span class="sc">}</span><span class="ss"> years old."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p><strong>What happens:</strong></p>
+<ol type="1">
+<li>Python reads <code>Lion('Mufasa', 12)</code> and calls <code>__init__()</code> with arguments <code>'Mufasa'</code> and <code>12</code></li>
+<li>The <code>__init__()</code> method creates an instance and sets the attributes</li>
+<li>Python returns the instance and assigns it to the variable <code>my_lion</code></li>
+</ol>
+</div>
+<div class="fragment">
+<p><strong>Naming convention:</strong></p>
+<ul>
+<li><strong>Capitalized names</strong> (like <code>Lion</code>) refer to classes</li>
+<li><strong>Lowercase names</strong> (like <code>my_lion</code>) refer to instances</li>
+</ul>
+</div>
+</section>
+<section id="accessing-attributes" class="level2">
+<h2 class="anchored" data-anchor-id="accessing-attributes">Accessing Attributes</h2>
+<p>Use <strong>dot notation</strong> to access an instance’s attributes:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>my_lion.name  <span class="co"># Access the name attribute</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>my_lion.age   <span class="co"># Access the age attribute</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Python looks at the instance and finds the attribute associated with it.</p>
+</section>
+<section id="calling-methods" class="level2">
+<h2 class="anchored" data-anchor-id="calling-methods">Calling Methods</h2>
+<p>Use dot notation to call any method defined in the class:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>my_lion.roar()</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>my_lion.pace()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Give the instance name (<code>my_lion</code>) and the method name (<code>roar</code>), separated by a dot</li>
+<li>Python looks for the method in the class and runs that code</li>
+<li>Descriptive names like <code>roar()</code> and <code>pace()</code> make code easy to understand</li>
+</ul>
+</div>
+</section>
+<section id="creating-multiple-instances" class="level2">
+<h2 class="anchored" data-anchor-id="creating-multiple-instances">Creating Multiple Instances</h2>
+<p>Create as many instances from a class as you need. Each instance is separate with its own set of attributes:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>my_lion <span class="op">=</span> Lion(<span class="st">'Mufasa'</span>, <span class="dv">12</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>your_lion <span class="op">=</span> Lion(<span class="st">'Simba'</span>, <span class="dv">8</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"My lion's name is </span><span class="sc">{</span>my_lion<span class="sc">.</span>name<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"My lion is </span><span class="sc">{</span>my_lion<span class="sc">.</span>age<span class="sc">}</span><span class="ss"> years old."</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>my_lion.roar()</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Your lion's name is </span><span class="sc">{</span>your_lion<span class="sc">.</span>name<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Your lion is </span><span class="sc">{</span>your_lion<span class="sc">.</span>age<span class="sc">}</span><span class="ss"> years old."</span>)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>your_lion.pace()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p><strong>Expected Output:</strong></p>
+<pre><code>My lion's name is Mufasa.
+My lion is 12 years old.
+Mufasa lets out a mighty roar!
+
+Your lion's name is Simba.
+Your lion is 8 years old.
+Simba paces back and forth nervously.</code></pre>
+</div>
+<p><strong>Key Point:</strong></p>
+<ul>
+<li>Each lion is a <strong>separate instance</strong> with its own attributes</li>
+<li>Both lions have the <strong>same methods</strong> and can perform the same actions</li>
+<li>Even with the same name and age, each instance would be separate</li>
+<li>Create as many instances as needed by assigning each to a unique variable</li>
+</ul>
+</section>
+</section>
+<section id="working-with-classes-and-instances" class="level1">
+<h1>Working with Classes and Instances</h1>
+<p>Most of your programming time involves <strong>working with instances</strong> created from classes.</p>
+<p>Common tasks:</p>
+<ul>
+<li>Modify attributes of an instance</li>
+<li>Update attributes directly or through methods</li>
+<li>Validate changes before updating</li>
+</ul>
+<section id="the-lion-class-enhanced" class="level2">
+<h2 class="anchored" data-anchor-id="the-lion-class-enhanced">The Lion Class (Enhanced)</h2>
+<p>Create an enhanced Lion class with more attributes and methods:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Lion:</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""An enhanced model of a lion in the den."""</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age, strength):</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Initialize attributes to describe a lion."""</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.strength <span class="op">=</span> strength</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_descriptive_name(<span class="va">self</span>):</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Return a neatly formatted descriptive name."""</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>        long_name <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> the Lion - Age </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>age<span class="sc">}</span><span class="ss">, Strength </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>strength<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> long_name.title()</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an instance</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>first_lion <span class="op">=</span> Lion(<span class="st">'Maned King'</span>, <span class="dv">12</span>, <span class="dv">95</span>)</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(first_lion.get_descriptive_name())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p><strong>Expected Output:</strong></p>
+<pre><code>Maned King the Lion - Age 12, Strength 95</code></pre>
+</div>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>The <code>__init__()</code> method defines three attributes: <code>name</code>, <code>age</code>, <code>strength</code></li>
+<li>The <code>get_descriptive_name()</code> method returns a formatted string combining all attributes</li>
+<li>We create an instance and call the method to display the lion’s information</li>
+</ul>
+</section>
+<section id="default-values-for-attributes" class="level2">
+<h2 class="anchored" data-anchor-id="default-values-for-attributes">Default Values for Attributes</h2>
+<p>Define attributes without parameters — they’re assigned <strong>default values</strong> in <code>__init__()</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Lion:</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""A model of a lion in the den."""</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age, strength):</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Initialize attributes to describe a lion."""</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.strength <span class="op">=</span> strength</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.hunger_level <span class="op">=</span> <span class="dv">0</span>  <span class="co"># Default value</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># [...] omitted for brevity</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> check_hunger(<span class="va">self</span>):</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Print a statement showing the lion's hunger level."""</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"This lion's hunger level is </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>hunger_level<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>first_lion <span class="op">=</span> Lion(<span class="st">'Maned King'</span>, <span class="dv">12</span>, <span class="dv">95</span>)</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(first_lion.get_descriptive_name())</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>first_lion.check_hunger()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p><strong>Expected Output:</strong></p>
+<pre><code>Maned King the Lion - Age 12, Strength 95
+This lion's hunger level is 0.</code></pre>
+</div>
+<p><strong>Key additions:</strong></p>
+<ul>
+<li><code>hunger_level</code> attribute starts at 0 (default value)</li>
+<li><code>check_hunger()</code> method displays the current hunger level</li>
+<li>The lion initially has hunger level 0 — but we need a way to change this value</li>
+</ul>
+<div class="fragment">
+<p>An alternative approach is to allow the hunger level to be set when creating the instance, but still provide a default value if it’s not specified:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age, strength, hunger_level<span class="op">=</span><span class="dv">0</span>):</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Initialize attributes to describe a lion."""</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.strength <span class="op">=</span> strength</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.hunger_level <span class="op">=</span> hunger_level  <span class="co"># Default value if not provided</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="modifying-attribute-values" class="level2">
+<h2 class="anchored" data-anchor-id="modifying-attribute-values">Modifying Attribute Values</h2>
+<p>You can change an attribute’s value in <strong>three ways</strong>:</p>
+<ol type="1">
+<li><strong>Change directly through an instance</strong> — access the attribute directly</li>
+<li><strong>Set through a method</strong> — call a method that handles the update</li>
+<li><strong>Increment through a method</strong> — add a certain amount to the value</li>
+</ol>
+<section id="approach-1-modify-directly" class="level3">
+<h3 class="anchored" data-anchor-id="approach-1-modify-directly">Approach 1: Modify Directly</h3>
+<p>Use <strong>dot notation</strong> to change an attribute’s value directly:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>first_lion <span class="op">=</span> Lion(<span class="st">'Scar'</span>, <span class="dv">12</span>, <span class="dv">95</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(first_lion.get_descriptive_name())</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Modify hunger level directly</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>first_lion.hunger_level <span class="op">=</span> <span class="dv">8</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>first_lion.check_hunger()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p><strong>Expected Output:</strong></p>
+<pre><code>Scar The Lion - Age 12, Strength 95
+This lion's hunger level is 8.</code></pre>
+</div>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Use dot notation: <code>instance.attribute = new_value</code></li>
+<li>Python finds the attribute and sets it directly</li>
+<li><strong>Simple</strong>, but sometimes you want more control — that’s where methods come in</li>
+</ul>
+</section>
+<section id="approach-2-modify-through-a-method" class="level3">
+<h3 class="anchored" data-anchor-id="approach-2-modify-through-a-method">Approach 2: Modify Through a Method</h3>
+<p>Write a <strong>method</strong> to update attributes. This lets you add validation and control:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Lion:</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""A model of a lion in the den."""</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age, strength):</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Initialize attributes to describe a lion."""</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.strength <span class="op">=</span> strength</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.hunger_level <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_descriptive_name(<span class="va">self</span>):</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Return a neatly formatted descriptive name."""</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>        long_name <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> the Lion - Age </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>age<span class="sc">}</span><span class="ss">, Strength </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>strength<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> long_name.title()</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> check_hunger(<span class="va">self</span>):</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Print a statement showing the lion's hunger level."""</span></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"This lion's hunger level is </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>hunger_level<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> set_hunger(<span class="va">self</span>, level):</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Set the hunger level to the given value."""</span></span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.hunger_level <span class="op">=</span> level</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>first_lion <span class="op">=</span> Lion(<span class="st">'Scar'</span>, <span class="dv">12</span>, <span class="dv">95</span>)</span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(first_lion.get_descriptive_name())</span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>first_lion.set_hunger(<span class="dv">8</span>)</span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>first_lion.check_hunger()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p><strong>Expected Output:</strong></p>
+<pre><code>Scar The Lion - Age 12, Strength 95
+This lion's hunger level is 8.</code></pre>
+</div>
+<p><strong>Benefits of using a method:</strong></p>
+<ul>
+<li>Centralise the update logic</li>
+<li>Add validation and error checking</li>
+<li>Make code easier to maintain</li>
+</ul>
+<p><strong>Add validation:</strong> Prevent invalid updates (e.g., hunger level above 10):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Lion:</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""A model of a lion in the den."""</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age, strength):</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.strength <span class="op">=</span> strength</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.hunger_level <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_descriptive_name(<span class="va">self</span>):</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>        long_name <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> the Lion - Age </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>age<span class="sc">}</span><span class="ss">, Strength </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>strength<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> long_name.title()</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> check_hunger(<span class="va">self</span>):</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"This lion's hunger level is </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>hunger_level<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> set_hunger(<span class="va">self</span>, level):</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a><span class="co">        Set the hunger level to the given value.</span></span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a><span class="co">        Reject the change if it exceeds maximum hunger (10).</span></span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> level <span class="op">&lt;=</span> <span class="dv">10</span>:</span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.hunger_level <span class="op">=</span> level</span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Hunger level cannot exceed 10!"</span>)</span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>first_lion <span class="op">=</span> Lion(<span class="st">'Scar'</span>, <span class="dv">12</span>, <span class="dv">95</span>)</span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>first_lion.set_hunger(<span class="dv">8</span>)</span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a>first_lion.check_hunger()</span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Attempt to set hunger too high</span></span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a>first_lion.set_hunger(<span class="dv">12</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p><strong>Expected Output:</strong></p>
+<pre><code>This lion's hunger level is 8.
+Hunger level cannot exceed 10!</code></pre>
+</div>
+<p><strong>Validation in action:</strong></p>
+<ul>
+<li>Method checks if the new level is valid (max 10)</li>
+<li>Only updates if <code>level &lt;= 10</code></li>
+<li>Prints a warning if someone tries an invalid update</li>
+<li>This adds <strong>business logic</strong> and prevents mistakes</li>
+</ul>
+</section>
+<section id="approach-3-increment-through-a-method" class="level3">
+<h3 class="anchored" data-anchor-id="approach-3-increment-through-a-method">Approach 3: Increment Through a Method</h3>
+<p><strong>Increment</strong> an attribute by adjusting it relative to its current value, rather than setting a fixed new value.</p>
+<p><strong>Scenario:</strong> A lion gets fed — feeding reduces its hunger level:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Lion:</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""A model of a lion in the den."""</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age, strength):</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.strength <span class="op">=</span> strength</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.hunger_level <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_descriptive_name(<span class="va">self</span>):</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>        long_name <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> the Lion - Age </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>age<span class="sc">}</span><span class="ss">, Strength </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>strength<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> long_name.title()</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> check_hunger(<span class="va">self</span>):</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"This lion's hunger level is </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>hunger_level<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> set_hunger(<span class="va">self</span>, level):</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> level <span class="op">&lt;=</span> <span class="dv">10</span>:</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.hunger_level <span class="op">=</span> level</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Hunger level cannot exceed 10!"</span>)</span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> feed_lion(<span class="va">self</span>, meals):</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Reduce hunger by the given number of meals (minimum 0)."""</span></span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.hunger_level <span class="op">=</span> <span class="bu">max</span>(<span class="dv">0</span>, <span class="va">self</span>.hunger_level <span class="op">-</span> meals)</span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new lion</span></span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>second_lion <span class="op">=</span> Lion(<span class="st">'Scar'</span>, <span class="dv">8</span>, <span class="dv">95</span>)</span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(second_lion.get_descriptive_name())</span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Set initial hunger</span></span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a>second_lion.set_hunger(<span class="dv">3</span>)</span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a>second_lion.check_hunger()</span>
+<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Feed the lion</span></span>
+<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a>second_lion.feed_lion(<span class="dv">2</span>)</span>
+<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a>second_lion.check_hunger()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p><strong>Expected Output:</strong></p>
+<pre><code>Scar The Lion - Age 8, Strength 95
+This lion's hunger level is 3.
+This lion's hunger level is 1.</code></pre>
+</div>
+<p><strong>How incrementing works:</strong></p>
+<ul>
+<li><code>max(0, self.hunger_level - meals)</code> reduces hunger but prevents it from going below 0</li>
+<li>Useful when adjusting a value relative to its current state rather than replacing it entirely</li>
+<li>Can combine with validation to also prevent exceeding the upper limit</li>
+</ul>
+<p><strong>Key Point:</strong> Methods give you control over how and when attributes are updated. Use them to validate data, add business logic, and make your code more maintainable.</p>
+</section>
+</section>
+<section id="setter-and-getter-methods" class="level2">
+<h2 class="anchored" data-anchor-id="setter-and-getter-methods">Setter and Getter Methods</h2>
+<ul>
+<li><strong>Getter methods</strong> return the value of an attribute (e.g., <code>check_hunger()</code>)</li>
+<li><strong>Setter methods</strong> update the value of an attribute (e.g., <code>set_hunger()</code>)</li>
+</ul>
+<p>Getters and setters provide a controlled interface to access and modify attributes, allowing you to add validation and maintain encapsulation. In contrast to other programming languages that often require explicit getter and setter methods, Python allows direct attribute access instead of getters and setters, but using methods can still be beneficial for validation and control.</p>
+</section>
+</section>
+<section id="task-8.0-the-babylonian-den-manager" class="level1">
+<h1>🔧 Task 8.0: The Babylonian Den Manager 🦁</h1>
+<p><strong>Scenario</strong>:</p>
+<p>It is 539 BC. King Darius has issued a decree, and Daniel has been cast into the den. As the Royal Keeper of the Den, you need a system to monitor the “threat level” of the lions before the King visits at dawn.</p>
+<p><strong>The Tasks:</strong></p>
+<ul>
+<li>The Setup: Assume the Lion class already exists (each has at least a <code>name</code> and a <code>hunger_level</code> → <code>lion2.py</code>).</li>
+<li>Define the <code>Den</code> Class:
+<ul>
+<li>Attributes: It should have
+<ul>
+<li>a <code>is_sealed</code> (boolean) and</li>
+<li>a list called <code>lions</code> to hold the lion objects.</li>
+</ul></li>
+<li>Methods:
+<ul>
+<li>The <code>add_lion</code> Method: Create a method to append a Lion object to the den’s list.<br>
+</li>
+<li>The <code>status_report</code> Method: This is the core of the task. It must:
+<ul>
+<li>Calculate the Total Hunger (sum of all lion hunger levels).</li>
+<li>Calculate the Average Hunger (Total / number of lions).</li>
+<li>Return these values in a dictionary. 📥</li>
+</ul></li>
+<li>The <code>open</code> and <code>close</code> Methods:
+<ul>
+<li>Change the sealed status.</li>
+<li><code>add_lion</code> and <code>status_report</code> shall only work if the den is open.</li>
+<li>Add a print statement that says “The den is sealed!” if <code>is_sealed</code> is True.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>You can use the following code to test your implementation:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Simulation ---</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create Lions</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>leo <span class="op">=</span> Lion(<span class="st">"Leo"</span>, <span class="dv">9</span>, <span class="dv">88</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>leo.set_hunger(<span class="dv">7</span>)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>sultan <span class="op">=</span> Lion(<span class="st">"Sultan"</span>, <span class="dv">8</span>, <span class="dv">23</span>)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>sultan.set_hunger(<span class="dv">4</span>)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Setup the Den</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>babylon_den <span class="op">=</span> Den()</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>babylon_den.<span class="bu">open</span>()</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>babylon_den.add_lion(leo)</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>babylon_den.add_lion(sultan)</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Get the report</span></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>report <span class="op">=</span> babylon_den.get_hunger_report()</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>babylon_den.close()</span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> report:</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"--- 🏛️ Royal Den Report (539 BCE) ---"</span>)</span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Lions in Den: </span><span class="sc">{</span>report[<span class="st">'lion_count'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Average Hunger Level: </span><span class="sc">{</span>report[<span class="st">'average_hunger'</span>]<span class="sc">}</span><span class="ss">/10"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="solution" class="level2">
+<h2 class="anchored" data-anchor-id="solution">Solution</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> lion2 <span class="im">import</span> Lion</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Den:</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.lions <span class="op">=</span> []</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.is_sealed <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> add_lion(<span class="va">self</span>, lion_object):</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.is_sealed:</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">'The den is sealed. Cannot add a lion.'</span>)</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.lions.append(lion_object)</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_hunger_report(<span class="va">self</span>):</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.is_sealed:</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">'The den is sealed. Cannot check the lions.'</span>)</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span></span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 1. Calculate stats</span></span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>        total_hunger <span class="op">=</span> <span class="bu">sum</span>(lion.hunger_level <span class="cf">for</span> lion <span class="kw">in</span> <span class="va">self</span>.lions)</span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Avoid division by zero if den is empty!</span></span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a>        count <span class="op">=</span> <span class="bu">len</span>(<span class="va">self</span>.lions)</span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>        avg_hunger <span class="op">=</span> total_hunger <span class="op">/</span> count <span class="cf">if</span> count <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="dv">0</span></span>
+<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 2. Return the dictionary report</span></span>
+<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> {</span>
+<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a>            <span class="st">"total_threat"</span>: total_hunger,</span>
+<span id="cb25-29"><a href="#cb25-29" aria-hidden="true" tabindex="-1"></a>            <span class="st">"average_hunger"</span>: avg_hunger,</span>
+<span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a>            <span class="st">"lion_count"</span>: count</span>
+<span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb25-32"><a href="#cb25-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-33"><a href="#cb25-33" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="bu">open</span>(<span class="va">self</span>):</span>
+<span id="cb25-34"><a href="#cb25-34" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.is_sealed <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb25-35"><a href="#cb25-35" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb25-36"><a href="#cb25-36" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> close(<span class="va">self</span>):</span>
+<span id="cb25-37"><a href="#cb25-37" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.is_sealed <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb25-38"><a href="#cb25-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-39"><a href="#cb25-39" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Simulation ---</span></span>
+<span id="cb25-40"><a href="#cb25-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-41"><a href="#cb25-41" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create Lions</span></span>
+<span id="cb25-42"><a href="#cb25-42" aria-hidden="true" tabindex="-1"></a>leo <span class="op">=</span> Lion(<span class="st">"Leo"</span>, <span class="dv">9</span>, <span class="dv">88</span>)</span>
+<span id="cb25-43"><a href="#cb25-43" aria-hidden="true" tabindex="-1"></a>leo.set_hunger(<span class="dv">7</span>)</span>
+<span id="cb25-44"><a href="#cb25-44" aria-hidden="true" tabindex="-1"></a>sultan <span class="op">=</span> Lion(<span class="st">"Sultan"</span>, <span class="dv">8</span>, <span class="dv">23</span>)</span>
+<span id="cb25-45"><a href="#cb25-45" aria-hidden="true" tabindex="-1"></a>sultan.set_hunger(<span class="dv">4</span>)</span>
+<span id="cb25-46"><a href="#cb25-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-47"><a href="#cb25-47" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Setup the Den</span></span>
+<span id="cb25-48"><a href="#cb25-48" aria-hidden="true" tabindex="-1"></a>babylon_den <span class="op">=</span> Den()</span>
+<span id="cb25-49"><a href="#cb25-49" aria-hidden="true" tabindex="-1"></a>babylon_den.<span class="bu">open</span>()</span>
+<span id="cb25-50"><a href="#cb25-50" aria-hidden="true" tabindex="-1"></a>babylon_den.add_lion(leo)</span>
+<span id="cb25-51"><a href="#cb25-51" aria-hidden="true" tabindex="-1"></a>babylon_den.add_lion(sultan)</span>
+<span id="cb25-52"><a href="#cb25-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-53"><a href="#cb25-53" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Get the report</span></span>
+<span id="cb25-54"><a href="#cb25-54" aria-hidden="true" tabindex="-1"></a>report <span class="op">=</span> babylon_den.get_hunger_report()</span>
+<span id="cb25-55"><a href="#cb25-55" aria-hidden="true" tabindex="-1"></a>babylon_den.close()</span>
+<span id="cb25-56"><a href="#cb25-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-57"><a href="#cb25-57" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> report:</span>
+<span id="cb25-58"><a href="#cb25-58" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"--- 🏛️ Royal Den Report (539 BCE) ---"</span>)</span>
+<span id="cb25-59"><a href="#cb25-59" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Lions in Den: </span><span class="sc">{</span>report[<span class="st">'lion_count'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb25-60"><a href="#cb25-60" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Average Hunger Level: </span><span class="sc">{</span>report[<span class="st">'average_hunger'</span>]<span class="sc">}</span><span class="ss">/10"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p><strong>Expected Output:</strong></p>
+<pre><code>--- 🏛️ Royal Den Report (539 BCE) ---
+Lions in Den: 2
+Average Hunger Level: 5.5/10</code></pre>
+</div>
+</section>
+</section>
+<section id="inheritance" class="level1">
+<h1>Inheritance</h1>
+<p>Don’t start from scratch! Use <strong>inheritance</strong> when writing a specialized version of an existing class.</p>
+<p><strong>Key concepts:</strong></p>
+<ul>
+<li><strong>Parent class:</strong> The original class (also called superclass)</li>
+<li><strong>Child class:</strong> A new class that inherits from the parent (also called subclass)</li>
+<li>Child classes inherit all attributes and methods from the parent</li>
+<li>Child classes can define new attributes and methods</li>
+<li>Child classes can override parent methods</li>
+</ul>
+<section id="example-minister-child-from-citizen-parent" class="level2">
+<h2 class="anchored" data-anchor-id="example-minister-child-from-citizen-parent">Example: Minister (Child) from Citizen (Parent)</h2>
+<p><strong>Scenario:</strong> A <code>Minister</code> is a special type of <code>Citizen</code> with the ability to suggest royal decrees.</p>
+<p>A minister has everything a regular citizen has.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Citizen:</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Represent a citizen of the kingdom."""</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Initialize attributes to describe a citizen."""</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_description(<span class="va">self</span>):</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Return a formatted description of the citizen."""</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">, age </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>age<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> pay_taxes(<span class="va">self</span>):</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Pay taxes to the kingdom."""</span></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> pays taxes to the kingdom."</span>)</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Minister(Citizen):</span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""A minister is a special citizen in the royal court."""</span></span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Initialize attributes of the parent class."""</span></span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(name, age)</span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a minister instance</span></span>
+<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a>minister <span class="op">=</span> Minister(<span class="st">'Daniel'</span>, <span class="dv">40</span>)</span>
+<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(minister.get_description())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p><strong>Expected Output:</strong></p>
+<pre><code>Daniel, age 40</code></pre>
+</div>
+<p><strong>How inheritance works:</strong></p>
+<ol type="1">
+<li><strong>Parent class appears first</strong> — <code>Citizen</code> is defined before <code>Minister</code></li>
+<li><strong>Child class inherits</strong> — <code>Minister(Citizen)</code> inherits from <code>Citizen</code></li>
+<li><strong>Call parent <code>__init__()</code></strong> — <code>super().__init__()</code> calls the parent’s <code>__init__()</code> method</li>
+<li><strong><code>super()</code></strong> is a special function that accesses parent class methods</li>
+<li><strong>All parent attributes available</strong> — <code>Minister</code> gets <code>name</code> and <code>age</code> from <code>Citizen</code></li>
+<li><strong>All parent methods available</strong> — <code>Minister</code> can use <code>get_description()</code> and <code>pay_taxes()</code></li>
+</ol>
+</section>
+<section id="defining-attributes-and-methods-for-the-child-class" class="level2">
+<h2 class="anchored" data-anchor-id="defining-attributes-and-methods-for-the-child-class">Defining Attributes and Methods for the Child Class</h2>
+<p>A <strong>Minister</strong> is a special type of <strong>Citizen</strong>, so they have everything a citizen has, plus additional features specific to ministers.</p>
+<p>Add <strong>new attributes and methods</strong> to differentiate the child class from the parent.</p>
+<p>Don’t overcomplicate the parent class — only add attributes/methods specific to the child class to the child.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Citizen:</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Represent a citizen of the kingdom."""</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Initialize attributes to describe a citizen."""</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_description(<span class="va">self</span>):</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Return a formatted description of the citizen."""</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">, age </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>age<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> pay_taxes(<span class="va">self</span>):</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Pay taxes to the kingdom."""</span></span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> pays taxes to the kingdom."</span>)</span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Minister(Citizen):</span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""A minister is a special citizen in the royal court."""</span></span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age, respect_from_king<span class="op">=</span><span class="dv">50</span>):</span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a><span class="co">        Initialize attributes of the parent class.</span></span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a><span class="co">        Then initialize attributes specific to a minister.</span></span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(name, age)</span>
+<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.respect_from_king <span class="op">=</span> respect_from_king</span>
+<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> suggest_law(<span class="va">self</span>):</span>
+<span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Suggest a new law to the king."""</span></span>
+<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> suggests a new law. The king's respect: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>respect_from_king<span class="sc">}</span><span class="ss">/100"</span>)</span>
+<span id="cb29-31"><a href="#cb29-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-32"><a href="#cb29-32" aria-hidden="true" tabindex="-1"></a>minister <span class="op">=</span> Minister(<span class="st">'Daniel'</span>, <span class="dv">40</span>)</span>
+<span id="cb29-33"><a href="#cb29-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(minister.get_description())</span>
+<span id="cb29-34"><a href="#cb29-34" aria-hidden="true" tabindex="-1"></a>minister.suggest_law()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p><strong>Expected Output:</strong></p>
+<pre><code>Daniel, age 40
+Daniel suggests a new law. The king's respect: 50/100</code></pre>
+</div>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li>The Minister class inherits from Citizen, gaining all parent attributes and methods</li>
+<li><code>super().__init__()</code> calls the parent’s <code>__init__()</code> method first</li>
+<li>After the parent initialization, we can add child-specific attributes like <code>respect_from_king</code></li>
+<li>New methods like <code>suggest_law()</code> are specific to the child class</li>
+<li>The child class has access to parent methods: <code>minister.get_description()</code> works because Minister inherited it</li>
+</ul>
+</section>
+<section id="overriding-methods-of-the-parent-class" class="level2">
+<h2 class="anchored" data-anchor-id="overriding-methods-of-the-parent-class">Overriding Methods of the Parent Class</h2>
+<p>When the behavior of a child class should differ from its parent class, you can <strong>override</strong> the parent method.</p>
+<ul>
+<li>Define a method in the child class with the same name as a parent method</li>
+<li>The child’s version will be used instead of the parent’s version</li>
+<li>This allows specialized behavior while maintaining the inheritance structure</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Citizen:</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Represent a citizen of the kingdom."""</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Initialize attributes to describe a citizen."""</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_description(<span class="va">self</span>):</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Return a formatted description of the citizen."""</span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">, age </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>age<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak_to_the_king(<span class="va">self</span>):</span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Speak to the king."""</span></span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> speaks to the king. But the king does not listen."</span>)</span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Minister(Citizen):</span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""A minister is a special citizen in the royal court."""</span></span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age, respect_from_king<span class="op">=</span><span class="dv">50</span>):</span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a><span class="co">        Initialize attributes of the parent class.</span></span>
+<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a><span class="co">        Then initialize attributes specific to a minister.</span></span>
+<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(name, age)</span>
+<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.respect_from_king <span class="op">=</span> respect_from_king</span>
+<span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak_to_the_king(<span class="va">self</span>):</span>
+<span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Override speak_to_the_king with authority."""</span></span>
+<span id="cb31-30"><a href="#cb31-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.respect_from_king <span class="op">&gt;=</span> <span class="dv">90</span>:</span>
+<span id="cb31-31"><a href="#cb31-31" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> speaks to the king. He agrees."</span>)</span>
+<span id="cb31-32"><a href="#cb31-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb31-33"><a href="#cb31-33" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> speaks to the king. He will think about it."</span>)</span>
+<span id="cb31-34"><a href="#cb31-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-35"><a href="#cb31-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Test both behaviors</span></span>
+<span id="cb31-36"><a href="#cb31-36" aria-hidden="true" tabindex="-1"></a>common_citizen <span class="op">=</span> Citizen(<span class="st">"Marcus"</span>, <span class="dv">35</span>)</span>
+<span id="cb31-37"><a href="#cb31-37" aria-hidden="true" tabindex="-1"></a>common_citizen.speak_to_the_king()</span>
+<span id="cb31-38"><a href="#cb31-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-39"><a href="#cb31-39" aria-hidden="true" tabindex="-1"></a>minister <span class="op">=</span> Minister(<span class="st">"Daniel"</span>, <span class="dv">40</span>, <span class="dv">100</span>)</span>
+<span id="cb31-40"><a href="#cb31-40" aria-hidden="true" tabindex="-1"></a>minister.speak_to_the_king()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p><strong>Expected Output:</strong></p>
+<pre><code>Marcus speaks to the king. But the king does not listen.
+Daniel speaks to the king. He agrees.</code></pre>
+</div>
+<p><strong>What Happened:</strong></p>
+<ul>
+<li>Both <code>Citizen</code> and <code>Minister</code> have a <code>speak_to_the_king()</code> method</li>
+<li>When we call <code>speak_to_the_king()</code> on a Minister instance, Python uses the child’s version</li>
+<li>The child’s version can completely replace or extend the parent’s behavior</li>
+<li>This is powerful because different types of citizens can behave differently while sharing common structure</li>
+</ul>
+</section>
+</section>
+<section id="instances-as-attributes" class="level1">
+<h1>Instances as Attributes</h1>
+<p>Instead of putting everything in one class, you can create smaller classes and use them as attributes in larger classes.</p>
+<ul>
+<li>This approach is called <strong>composition</strong></li>
+<li>It helps organise complex objects into manageable pieces</li>
+<li>A kingdom might have a king (who is also a citizen) as an attribute</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> King(Citizen):</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""A king is a special citizen who rules the kingdom."""</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age, reign_years):</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Initialize attributes of the parent class and king-specific attributes."""</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(name, age)</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.reign_years <span class="op">=</span> reign_years</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> decree(<span class="va">self</span>, law_description):</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""The king issues a decree."""</span></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"King </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> decrees: </span><span class="sc">{</span>law_description<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Kingdom:</span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Represent a kingdom with a ruling king."""</span></span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, kingdom_name, king_name, king_age, reign_years):</span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.kingdom_name <span class="op">=</span> kingdom_name</span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># King is now a separate object (an instance of the King class)</span></span>
+<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.king <span class="op">=</span> King(king_name, king_age, reign_years)</span>
+<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_status(<span class="va">self</span>):</span>
+<span id="cb33-22"><a href="#cb33-22" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Display the kingdom's status."""</span></span>
+<span id="cb33-23"><a href="#cb33-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>kingdom_name<span class="sc">}</span><span class="ss"> is ruled by </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>king<span class="sc">.</span>get_description()<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb33-24"><a href="#cb33-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-25"><a href="#cb33-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a kingdom with a king</span></span>
+<span id="cb33-26"><a href="#cb33-26" aria-hidden="true" tabindex="-1"></a>babylon <span class="op">=</span> Kingdom(<span class="st">"Babylon"</span>, <span class="st">"Darius"</span>, <span class="dv">52</span>, <span class="dv">15</span>)</span>
+<span id="cb33-27"><a href="#cb33-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-28"><a href="#cb33-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Access the kingdom's status</span></span>
+<span id="cb33-29"><a href="#cb33-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(babylon.get_status())</span>
+<span id="cb33-30"><a href="#cb33-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-31"><a href="#cb33-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Access the king's methods through the kingdom</span></span>
+<span id="cb33-32"><a href="#cb33-32" aria-hidden="true" tabindex="-1"></a>babylon.king.decree(<span class="st">"All must obey the law of the land!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p><strong>Expected Output:</strong></p>
+<pre><code>Babylon is ruled by Darius, age 52
+King Darius decrees: All must obey the law of the land!</code></pre>
+</div>
+<p><strong>Key Concepts:</strong></p>
+<ul>
+<li><code>King</code> is a child class that inherits from <code>Citizen</code></li>
+<li><code>Kingdom</code> is a separate class that creates a King instance as an attribute: <code>self.king = King(...)</code></li>
+<li>We access the king’s methods through the kingdom: <code>babylon.king.decree()</code></li>
+<li>We access the king’s attributes through the kingdom: <code>babylon.king.get_description()</code></li>
+<li>This demonstrates <strong>composition</strong>: a Kingdom contains a King, and the King is a special Citizen</li>
+</ul>
+</section>
+<section id="modeling-real-world-objects" class="level1">
+<h1>Modeling Real-World Objects</h1>
+<p>When designing classes, think about structure and relationships:</p>
+<p><strong>Questions to ask:</strong></p>
+<ul>
+<li>What are the attributes of this object?</li>
+<li>What can this object do (methods)?</li>
+<li>Will this object have specialized variations (child classes)?</li>
+<li>Are there smaller objects within this object (composition)?</li>
+</ul>
+<div class="fragment">
+<p><strong>Design Philosophy:</strong></p>
+<ul>
+<li>Start simple — don’t add everything at once</li>
+<li>It’s okay (even good!) to restructure code as you learn more</li>
+<li>Multiple designs can be correct — it depends on your needs</li>
+<li>You might use inheritance for some relationships and composition for others</li>
+</ul>
+</div>
+<p><strong>Example from our work:</strong></p>
+<ul>
+<li>We created a basic <code>Citizen</code> class</li>
+<li>Then added <code>Minister</code> as a specialized version (inheritance) that can suggest laws</li>
+<li>Then added <code>King</code> as another specialized Citizen (inheritance) who can issue decrees</li>
+<li>Then created <code>Kingdom</code> that contains a King instance (composition)</li>
+<li>This gives us flexible code where each class has a clear purpose</li>
+</ul>
+</section>
+<section id="importing-classes" class="level1">
+<h1>Importing Classes</h1>
+<p>As your classes grow more complex, keep your files clean by storing classes in separate modules.</p>
+<p><strong>Key Benefits:</strong></p>
+<ul>
+<li>Keep individual files short and readable</li>
+<li>Organise related classes together</li>
+<li>Reuse classes across multiple programs</li>
+<li>Separate logic from main program</li>
+</ul>
+<section id="importing-a-single-class" class="level2">
+<h2 class="anchored" data-anchor-id="importing-a-single-class">Importing a Single Class</h2>
+<p>Store a class in its own module, then import it where needed.</p>
+<p><strong>File: <code>citizen.py</code></strong> — Contains just the Citizen class with a module-level docstring</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""Classes for representing citizens of the kingdom."""</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Citizen:</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Represent a citizen of the kingdom."""</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Initialize attributes to describe a citizen."""</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_description(<span class="va">self</span>):</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Return a formatted description of the citizen."""</span></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">, age </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>age<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> pay_taxes(<span class="va">self</span>):</span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Pay taxes to the kingdom."""</span></span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> pays taxes to the kingdom."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>File: <code>main.py</code></strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> citizen <span class="im">import</span> Citizen</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Import Citizen and use it</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>marcus <span class="op">=</span> Citizen(<span class="st">'Marcus'</span>, <span class="dv">35</span>)</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(marcus.get_description())</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>marcus.pay_taxes()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p><strong>Expected Output:</strong></p>
+<pre><code>Marcus, age 35
+Marcus pays taxes to the kingdom.</code></pre>
+</div>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li><code>from citizen import Citizen</code> imports just the Citizen class from the citizen module</li>
+<li>Your main program file stays clean and focused</li>
+<li>The class logic is isolated in its own module</li>
+<li>Once the module works, you can use it without further changes</li>
+</ul>
+</section>
+<section id="storing-multiple-classes-in-a-module" class="level2">
+<h2 class="anchored" data-anchor-id="storing-multiple-classes-in-a-module">Storing Multiple Classes in a Module</h2>
+<p>Store related classes together in one module.</p>
+<p><strong>File: <code>kingdom.py</code></strong> — Contains Citizen, Minister, and King classes</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""A set of classes used to represent citizens in the kingdom."""</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Citizen:</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Represent a citizen of the kingdom."""</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_description(<span class="va">self</span>):</span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">, age </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>age<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Minister(Citizen):</span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""A minister is a special citizen in the royal court."""</span></span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(name, age)</span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.respect_from_king <span class="op">=</span> <span class="dv">50</span></span>
+<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> suggest_law(<span class="va">self</span>):</span>
+<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> suggests a new law."</span>)</span>
+<span id="cb38-19"><a href="#cb38-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-20"><a href="#cb38-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-21"><a href="#cb38-21" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> King(Citizen):</span>
+<span id="cb38-22"><a href="#cb38-22" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""A king is a special citizen who rules the kingdom."""</span></span>
+<span id="cb38-23"><a href="#cb38-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age, reign_years):</span>
+<span id="cb38-24"><a href="#cb38-24" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(name, age)</span>
+<span id="cb38-25"><a href="#cb38-25" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.reign_years <span class="op">=</span> reign_years</span>
+<span id="cb38-26"><a href="#cb38-26" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> decree(<span class="va">self</span>, law_description):</span>
+<span id="cb38-27"><a href="#cb38-27" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"King </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> decrees: </span><span class="sc">{</span>law_description<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="importing-multiple-classes-from-a-module" class="level2">
+<h2 class="anchored" data-anchor-id="importing-multiple-classes-from-a-module">Importing Multiple Classes from a Module</h2>
+<p>Import several related classes with a single statement.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> kingdom <span class="im">import</span> Citizen, Minister, King</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create different types of citizens</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>marcus <span class="op">=</span> Citizen(<span class="st">"Marcus"</span>, <span class="dv">35</span>)</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(marcus.get_description())</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>daniel <span class="op">=</span> Minister(<span class="st">"Daniel"</span>, <span class="dv">40</span>)</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>daniel.suggest_law()</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>darius <span class="op">=</span> King(<span class="st">"Darius"</span>, <span class="dv">52</span>, <span class="dv">15</span>)</span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>darius.decree(<span class="st">"All must follow the law!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p><strong>Expected Output:</strong></p>
+<pre><code>Marcus, age 35
+Daniel suggests a new law.
+King Darius decrees: All must follow the law!</code></pre>
+</div>
+<p><strong>Syntax:</strong></p>
+<ul>
+<li>Separate class names with commas: <code>from module import Class1, Class2, Class3</code></li>
+<li>Import only what you need</li>
+<li>Makes it clear what classes your program uses</li>
+</ul>
+</section>
+<section id="importing-an-entire-module" class="level2">
+<h2 class="anchored" data-anchor-id="importing-an-entire-module">Importing an Entire Module</h2>
+<p>Use dot notation to access classes from a module.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> kingdom</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Access classes using dot notation</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>marcus <span class="op">=</span> kingdom.Citizen(<span class="st">"Marcus"</span>, <span class="dv">35</span>)</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(marcus.get_description())</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>daniel <span class="op">=</span> kingdom.Minister(<span class="st">"Daniel"</span>, <span class="dv">40</span>)</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>daniel.suggest_law()</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>darius <span class="op">=</span> kingdom.King(<span class="st">"Darius"</span>, <span class="dv">52</span>, <span class="dv">15</span>)</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>darius.decree(<span class="st">"All must follow the law!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Clear where each class comes from: <code>kingdom.King</code></li>
+<li>Avoids naming conflicts</li>
+<li>Easy to read and understand module relationships</li>
+</ul>
+</section>
+<section id="using-aliases" class="level2">
+<h2 class="anchored" data-anchor-id="using-aliases">Using Aliases</h2>
+<p>Give classes or modules shorter names for convenience.</p>
+<p><strong>Alias a class:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> kingdom <span class="im">import</span> King <span class="im">as</span> Ruler</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the alias</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>darius <span class="op">=</span> Ruler(<span class="st">"Darius"</span>, <span class="dv">52</span>, <span class="dv">15</span>)</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>darius.decree(<span class="st">"All must follow the law!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Alias a module:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> kingdom <span class="im">as</span> k</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the module alias</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>darius <span class="op">=</span> k.King(<span class="st">"Darius"</span>, <span class="dv">52</span>, <span class="dv">15</span>)</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>darius.decree(<span class="st">"All must follow the law!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="styling-classes" class="level1">
+<h1>Styling Classes</h1>
+<p>Follow Python conventions for consistent, professional code.</p>
+<p><strong>Class naming:</strong></p>
+<ul>
+<li>Use <strong>CamelCase</strong> for class names: <code>Citizen</code>, <code>Minister</code>, <code>King</code></li>
+<li>Capitalise the first letter of each word</li>
+<li>No underscores in class names</li>
+</ul>
+<div class="fragment">
+<p><strong>Module and instance naming:</strong></p>
+<ul>
+<li>Use <strong>lowercase with underscores</strong> for module names: <code>kingdom.py</code>, <code>citizen.py</code></li>
+<li>Use <strong>lowercase with underscores</strong> for variable names: <code>my_citizen</code>, <code>darius_king</code></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Docstrings:</strong></p>
+<ul>
+<li>Include a docstring immediately after class definition</li>
+<li>Describe what the class represents</li>
+<li>Include module-level docstring describing what classes are in the module</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Spacing:</strong></p>
+<ul>
+<li>One blank line between methods in a class</li>
+<li>Two blank lines between classes in a module</li>
+</ul>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""Example of properly styled classes in a module."""</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Citizen:</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Represent a citizen of the kingdom."""</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Initialize citizen attributes."""</span></span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_description(<span class="va">self</span>):</span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Return a formatted description."""</span></span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">, age </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>age<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Minister(Citizen):</span>
+<span id="cb44-17"><a href="#cb44-17" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""A minister is a special citizen in the royal court."""</span></span>
+<span id="cb44-18"><a href="#cb44-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb44-19"><a href="#cb44-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
+<span id="cb44-20"><a href="#cb44-20" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Initialize minister attributes."""</span></span>
+<span id="cb44-21"><a href="#cb44-21" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(name, age)</span>
+<span id="cb44-22"><a href="#cb44-22" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.respect_from_king <span class="op">=</span> <span class="dv">50</span></span>
+<span id="cb44-23"><a href="#cb44-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb44-24"><a href="#cb44-24" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> suggest_law(<span class="va">self</span>):</span>
+<span id="cb44-25"><a href="#cb44-25" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Suggest a new law to the king."""</span></span>
+<span id="cb44-26"><a href="#cb44-26" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> suggests a new law."</span>)</span>
+<span id="cb44-27"><a href="#cb44-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-28"><a href="#cb44-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-29"><a href="#cb44-29" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> King(Citizen):</span>
+<span id="cb44-30"><a href="#cb44-30" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""A king is a special citizen who rules the kingdom."""</span></span>
+<span id="cb44-31"><a href="#cb44-31" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb44-32"><a href="#cb44-32" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age, reign_years):</span>
+<span id="cb44-33"><a href="#cb44-33" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Initialize king attributes."""</span></span>
+<span id="cb44-34"><a href="#cb44-34" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(name, age)</span>
+<span id="cb44-35"><a href="#cb44-35" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.reign_years <span class="op">=</span> reign_years</span>
+<span id="cb44-36"><a href="#cb44-36" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb44-37"><a href="#cb44-37" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> decree(<span class="va">self</span>, law_description):</span>
+<span id="cb44-38"><a href="#cb44-38" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Issue a royal decree."""</span></span>
+<span id="cb44-39"><a href="#cb44-39" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"King </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> decrees: </span><span class="sc">{</span>law_description<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Notice:</strong></p>
+<ul>
+<li>Module docstring explains the module’s purpose</li>
+<li>CamelCase for class names</li>
+<li>Docstrings for every class and method</li>
+<li>One blank line between methods</li>
+<li>Two blank lines between classes</li>
+</ul>
+</section>
+<section id="task-8.1-daniel-in-the-lions-den" class="level1">
+<h1>🔧 Task 8.1: Daniel in the Lions’ Den 🕊️</h1>
+<p><strong>Scenario</strong>:</p>
+<p>It is 539 BC. You are King Darius. An evil and jealous minister tricks you into passing a treacherous law to get rid of Daniel, your best minister and advisor… But see what happens.</p>
+<p><strong>Your Tasks</strong>:</p>
+<ul>
+<li>You are handed three files: <code>kingdom.py</code>, <code>main.py</code> and <code>story.py</code></li>
+<li>In <code>kingdom.py</code> and <code>main.py</code> you find many occurrences of <code>pass</code> together with an explanation of what you are supposed to implement (<code># TODO: ...</code>). Like this:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: [Here you'll find, what to do]</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Adapt the files directly. Do not rename them.</li>
+<li>You can ignore the <code>story.py</code> file. Just make sure it is in the same directory as <code>main.py</code> and <code>kingdom.py</code>.</li>
+<li>Finally, run the <code>main.py</code> file and debug until your small game is running.</li>
+</ul>
+</section>
+<section id="the-python-standard-library" class="level1">
+<h1>The Python Standard Library</h1>
+<p>Python comes with a comprehensive library of built-in modules — no installation needed!</p>
+<p><strong>What you get:</strong></p>
+<ul>
+<li>Ready-made functions and classes for common tasks</li>
+<li>Written and tested by experienced programmers</li>
+<li>Free to use in your programs</li>
+<li>Available in every Python installation</li>
+</ul>
+<p><strong>How to use:</strong></p>
+<ul>
+<li>Import the module you need</li>
+<li>Use its functions and classes like you would your own</li>
+<li>Focus on your program logic, not reimplementing common functionality</li>
+</ul>
+<section id="the-random-module" class="level2">
+<h2 class="anchored" data-anchor-id="the-random-module">The random Module</h2>
+<p>Generate random numbers and make random selections.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> random <span class="im">import</span> randint, choice</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Roll a die (random number between 1 and 6)</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>die_roll <span class="op">=</span> randint(<span class="dv">1</span>, <span class="dv">6</span>)</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Lion's agitation level: </span><span class="sc">{</span>die_roll<span class="sc">}</span><span class="ss">/10"</span>)</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Randomly select a citizen from the kingdom</span></span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>citizens <span class="op">=</span> [<span class="st">'Marcus'</span>, <span class="st">'Daniel'</span>, <span class="st">'Shadrach'</span>, <span class="st">'Meshach'</span>, <span class="st">'Abednego'</span>]</span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>chosen_citizen <span class="op">=</span> choice(citizens)</span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Selected for the den: </span><span class="sc">{</span>chosen_citizen<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p><strong>Expected Output</strong> <em>(values vary — output is random)</em>:</p>
+<pre><code>Lion's agitation level: 4/10
+Selected for the den: Daniel</code></pre>
+</div>
+<p><strong>Key Functions:</strong></p>
+<ul>
+<li><code>randint(a, b)</code> — Returns random integer between a and b (inclusive)</li>
+<li><code>choice(sequence)</code> — Returns random element from a list or tuple</li>
+</ul>
+<p><strong>Use Case:</strong></p>
+<ul>
+<li>Simulations and games</li>
+<li>Randomly selecting data samples</li>
+<li>Modelling unpredictable situations</li>
+</ul>
+</section>
+<section id="the-sys-module" class="level2">
+<h2 class="anchored" data-anchor-id="the-sys-module">The sys Module</h2>
+<p>Access system-specific parameters and functions.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Get Python version</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Python version: </span><span class="sc">{</span>sys<span class="sc">.</span>version<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Get command line arguments (useful for passing data to programs)</span></span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Program name: </span><span class="sc">{</span>sys<span class="sc">.</span>argv[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Access platform information</span></span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Platform: </span><span class="sc">{</span>sys<span class="sc">.</span>platform<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p><strong>Expected Output</strong> <em>(values depend on your system)</em>:</p>
+<pre><code>Python version: 3.12.0 (...)
+Program name: main.py
+Platform: linux</code></pre>
+</div>
+<p><strong>Key Attributes:</strong></p>
+<ul>
+<li><code>sys.version</code> — Python version information</li>
+<li><code>sys.argv</code> — Command-line arguments passed to the program</li>
+<li><code>sys.platform</code> — Information about the operating system</li>
+<li><code>sys.exit()</code> — Exit the program with a status code</li>
+</ul>
+<p><strong>Use Case:</strong></p>
+<ul>
+<li>Reading user input from command line</li>
+<li>Building cross-platform programs</li>
+<li>Debugging and getting system information</li>
+</ul>
+</section>
+<section id="the-time-module" class="level2">
+<h2 class="anchored" data-anchor-id="the-time-module">The time Module</h2>
+<p>Work with dates, times, and delays.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Get current time</span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>current_time <span class="op">=</span> time.time()</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Current time (seconds since epoch): </span><span class="sc">{</span>current_time<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Format current date and time</span></span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>formatted_time <span class="op">=</span> time.strftime(<span class="st">"%Y-%m-</span><span class="sc">%d</span><span class="st"> %H:%M:%S"</span>)</span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Formatted time: </span><span class="sc">{</span>formatted_time<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a delay (sleep for 1 second)</span></span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Daniel enters the den..."</span>)</span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>time.sleep(<span class="dv">1</span>)</span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The lions are peaceful."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p><strong>Expected Output</strong> <em>(time values depend on when you run it)</em>:</p>
+<pre><code>Current time (seconds since epoch): 1746350000.0
+Formatted time: 2026-05-04 10:30:00
+Daniel enters the den...
+The lions are peaceful.</code></pre>
+</div>
+<p><strong>Key Functions:</strong></p>
+<ul>
+<li><code>time.time()</code> — Seconds since January 1, 1970 (epoch)</li>
+<li><code>time.sleep(seconds)</code> — Pause execution for specified seconds</li>
+<li><code>time.strftime(format)</code> — Format current time as a readable string</li>
+<li><code>time.localtime()</code> — Get current date/time as a structured time object</li>
+</ul>
+<p><strong>Use Case:</strong></p>
+<ul>
+<li>Measuring performance and execution time</li>
+<li>Adding delays to programs</li>
+<li>Displaying formatted dates and times</li>
+<li>Creating time-based events</li>
+</ul>
+</section>
+<section id="where-you-are-right-now" class="level2">
+<h2 class="anchored" data-anchor-id="where-you-are-right-now">Where you are right now</h2>
+<p>Compare to your English level:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Level</th>
+<th>English Language</th>
+<th>Python Programming</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Beginner (1st Semester)</td>
+<td>~3,000–5,000 words (B2 level). Core grammar and ability to discuss general topics.</td>
+<td>Core Syntax &amp; Types. Understanding logic (if, loops), basic types (list, dict), and their essential methods (.append(), .get()).</td>
+</tr>
+<tr class="even">
+<td>Native Speaker (Professional)</td>
+<td>20,000–35,000 words. Fluent expression, nuanced vocabulary, and cultural idioms.</td>
+<td>Standard Library &amp; Best Practices. Mastery of built-in modules (os, json, collections). Writing “Pythonic” code (idiomatic expressions).</td>
+</tr>
+<tr class="odd">
+<td>Total Vocabulary (Global)</td>
+<td>&gt; 600,000 words. Includes archaic terms, medical jargon, and niche technical lingo.</td>
+<td>&gt; 500,000 External Packages. The entire ecosystem (PyPI) including specialized tools like TensorFlow (AI) or Django (Web).</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
