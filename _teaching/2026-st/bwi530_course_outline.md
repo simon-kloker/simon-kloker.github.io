@@ -52,7 +52,7 @@ Course Outline
 | 8  | 29.04.2026 | 8:15–11:30 | Buffer + Q&A Power BI Topic Assignments | C1.001 |
 | 9  | 06.05.2026 | 8:15–11:30 | **07 - Data Modeling III: Advanced Concepts** | C1.001 |
 | 10 | 13.05.2026 | 8:15–11:30 | **08 - Power BI: The Tabular Model and DAX Basics** | C1.001 |
-| 11 | 20.05.2026 | 8:15–11:30 | **09 - Modern BI: Governance & Security** | C1.001 |
-| 12 | 27.05.2026 | 8:15–11:30 | Presentations Power BI Topic Assignments | C1.001 |
-| 13 | 03.06.2026 | 8:15–11:30 | **10 - Data Visualization & Storytelling** | C1.001 |
+| 11 | 20.05.2026 | 8:15–11:30 | **TEST EXAM** and **09 - Modern BI: Governance & Security** | C1.001 |
+| 12 | 27.05.2026 | 8:15–11:30 | **09 - Modern BI: Governance & Security** | C1.001 |
+| 13 | 03.06.2026 | 8:15–11:30 | Presentations Power BI Topic Assignments | C1.001 |
 | 14 | 10.06.2026 | 8:15–11:30 | Buffer - Q&A Exam | C1.001 |
