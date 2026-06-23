@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Simon Kloker">
+
+<title>Coworkers Workshop: KI verstehen und nutzen</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="01_ki_workshop_coworkers_files/libs/clipboard/clipboard.min.js"></script>
+<script src="01_ki_workshop_coworkers_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="01_ki_workshop_coworkers_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="01_ki_workshop_coworkers_files/libs/quarto-html/popper.min.js"></script>
+<script src="01_ki_workshop_coworkers_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="01_ki_workshop_coworkers_files/libs/quarto-html/anchor.min.js"></script>
+<link href="01_ki_workshop_coworkers_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="01_ki_workshop_coworkers_files/libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="01_ki_workshop_coworkers_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="01_ki_workshop_coworkers_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="01_ki_workshop_coworkers_files/libs/bootstrap/bootstrap-2138299df88874143c5a6e9e4c250161.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="01_ki_workshop_coworkers_files/libs/quarto-diagram/mermaid.min.js"></script>
+<script src="01_ki_workshop_coworkers_files/libs/quarto-diagram/mermaid-init.js"></script>
+<link href="01_ki_workshop_coworkers_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#begrüßung-und-vorstellung-der-teilnehmer" id="toc-begrüßung-und-vorstellung-der-teilnehmer" class="nav-link active" data-scroll-target="#begrüßung-und-vorstellung-der-teilnehmer"><span class="header-section-number">1</span> Begrüßung und Vorstellung der Teilnehmer</a>
+  <ul class="collapse">
+  <li><a href="#wer-ist-im-raum" id="toc-wer-ist-im-raum" class="nav-link" data-scroll-target="#wer-ist-im-raum"><span class="header-section-number">1.1</span> Wer ist im Raum?</a></li>
+  <li><a href="#zu-mir" id="toc-zu-mir" class="nav-link" data-scroll-target="#zu-mir"><span class="header-section-number">1.2</span> Zu mir…</a></li>
+  <li><a href="#ablauf-und-ziele-des-workshops" id="toc-ablauf-und-ziele-des-workshops" class="nav-link" data-scroll-target="#ablauf-und-ziele-des-workshops"><span class="header-section-number">1.3</span> Ablauf und Ziele des Workshops</a></li>
+  <li><a href="#expertise-spektrum" id="toc-expertise-spektrum" class="nav-link" data-scroll-target="#expertise-spektrum"><span class="header-section-number">1.4</span> Expertise-Spektrum</a></li>
+  <li><a href="#ablauf" id="toc-ablauf" class="nav-link" data-scroll-target="#ablauf"><span class="header-section-number">1.5</span> Ablauf</a></li>
+  </ul></li>
+  <li><a href="#spotlight-generative-ki-und-agentic-ai" id="toc-spotlight-generative-ki-und-agentic-ai" class="nav-link" data-scroll-target="#spotlight-generative-ki-und-agentic-ai"><span class="header-section-number">2</span> Spotlight: Generative KI und Agentic AI</a>
+  <ul class="collapse">
+  <li><a href="#begrifflichkeiten-im-kontext-genai" id="toc-begrifflichkeiten-im-kontext-genai" class="nav-link" data-scroll-target="#begrifflichkeiten-im-kontext-genai"><span class="header-section-number">2.1</span> Begrifflichkeiten im Kontext GenAI</a></li>
+  <li><a href="#woher-kommt-generative-ki" id="toc-woher-kommt-generative-ki" class="nav-link" data-scroll-target="#woher-kommt-generative-ki"><span class="header-section-number">2.2</span> Woher kommt Generative KI?</a></li>
+  <li><a href="#natural-language-processing" id="toc-natural-language-processing" class="nav-link" data-scroll-target="#natural-language-processing"><span class="header-section-number">2.3</span> “Natural Language Processing”</a></li>
+  <li><a href="#embeddings-brücke-zwischen-text-und-seiner-semantik-und-mathematik" id="toc-embeddings-brücke-zwischen-text-und-seiner-semantik-und-mathematik" class="nav-link" data-scroll-target="#embeddings-brücke-zwischen-text-und-seiner-semantik-und-mathematik"><span class="header-section-number">2.4</span> Embeddings: Brücke zwischen Text und seiner Semantik und Mathematik</a></li>
+  <li><a href="#vom-embedding-zur-generierung-transformer-architektur" id="toc-vom-embedding-zur-generierung-transformer-architektur" class="nav-link" data-scroll-target="#vom-embedding-zur-generierung-transformer-architektur"><span class="header-section-number">2.5</span> Vom Embedding zur Generierung: Transformer-Architektur</a></li>
+  <li><a href="#agentic-ai-von-chat-zu-agenten" id="toc-agentic-ai-von-chat-zu-agenten" class="nav-link" data-scroll-target="#agentic-ai-von-chat-zu-agenten"><span class="header-section-number">2.6</span> Agentic AI: Von Chat zu Agenten</a></li>
+  <li><a href="#zusammenfassung" id="toc-zusammenfassung" class="nav-link" data-scroll-target="#zusammenfassung"><span class="header-section-number">2.7</span> Zusammenfassung</a></li>
+  <li><a href="#fun-fact-vergleich-gehirn-und-llms" id="toc-fun-fact-vergleich-gehirn-und-llms" class="nav-link" data-scroll-target="#fun-fact-vergleich-gehirn-und-llms"><span class="header-section-number">2.8</span> Fun Fact: Vergleich Gehirn und LLMs</a></li>
+  </ul></li>
+  <li><a href="#gesprächsrunde-1-trigger-warnung" id="toc-gesprächsrunde-1-trigger-warnung" class="nav-link" data-scroll-target="#gesprächsrunde-1-trigger-warnung"><span class="header-section-number">3</span> Gesprächsrunde 1: Trigger-Warnung</a>
+  <ul class="collapse">
+  <li><a href="#jetzt-wo-ihr-das-wisst-wie-geht-es-euch-damit" id="toc-jetzt-wo-ihr-das-wisst-wie-geht-es-euch-damit" class="nav-link" data-scroll-target="#jetzt-wo-ihr-das-wisst-wie-geht-es-euch-damit"><span class="header-section-number">3.1</span> 🤔 Jetzt, wo ihr das wisst… Wie geht es euch damit?</a></li>
+  <li><a href="#ki-trigger" id="toc-ki-trigger" class="nav-link" data-scroll-target="#ki-trigger"><span class="header-section-number">3.2</span> KI-Trigger</a></li>
+  </ul></li>
+  <li><a href="#spotlight-ki-und-kultur-10-minuten" id="toc-spotlight-ki-und-kultur-10-minuten" class="nav-link" data-scroll-target="#spotlight-ki-und-kultur-10-minuten"><span class="header-section-number">4</span> Spotlight: KI und Kultur (10 Minuten)</a>
+  <ul class="collapse">
+  <li><a href="#selfies-and-culture" id="toc-selfies-and-culture" class="nav-link" data-scroll-target="#selfies-and-culture"><span class="header-section-number">4.1</span> Selfies and Culture</a></li>
+  <li><a href="#what-are-smiles-trained-on" id="toc-what-are-smiles-trained-on" class="nav-link" data-scroll-target="#what-are-smiles-trained-on"><span class="header-section-number">4.2</span> What are smiles “trained on”?</a></li>
+  <li><a href="#the-moral-machine" id="toc-the-moral-machine" class="nav-link" data-scroll-target="#the-moral-machine"><span class="header-section-number">4.3</span> The Moral Machine</a></li>
+  <li><a href="#zusammenfassung-1" id="toc-zusammenfassung-1" class="nav-link" data-scroll-target="#zusammenfassung-1"><span class="header-section-number">4.4</span> Zusammenfassung</a></li>
+  <li><a href="#weitere-unterschiede" id="toc-weitere-unterschiede" class="nav-link" data-scroll-target="#weitere-unterschiede"><span class="header-section-number">4.5</span> Weitere Unterschiede</a></li>
+  </ul></li>
+  <li><a href="#gesprächsrunde-2-mein-platz-zwischen-ki-und-einsatz" id="toc-gesprächsrunde-2-mein-platz-zwischen-ki-und-einsatz" class="nav-link" data-scroll-target="#gesprächsrunde-2-mein-platz-zwischen-ki-und-einsatz"><span class="header-section-number">5</span> Gesprächsrunde 2: Mein Platz zwischen KI und Einsatz</a>
+  <ul class="collapse">
+  <li><a href="#meine-leistung-seine-leistung-unsere-leistung" id="toc-meine-leistung-seine-leistung-unsere-leistung" class="nav-link" data-scroll-target="#meine-leistung-seine-leistung-unsere-leistung"><span class="header-section-number">5.1</span> Meine Leistung, seine Leistung, unsere Leistung</a></li>
+  </ul></li>
+  <li><a href="#spotlight-use-cases" id="toc-spotlight-use-cases" class="nav-link" data-scroll-target="#spotlight-use-cases"><span class="header-section-number">6</span> Spotlight: Use Cases</a>
+  <ul class="collapse">
+  <li><a href="#blick-richtung-nutzung" id="toc-blick-richtung-nutzung" class="nav-link" data-scroll-target="#blick-richtung-nutzung"><span class="header-section-number">6.1</span> Blick Richtung Nutzung</a></li>
+  <li><a href="#rag-in-lesson-planning" id="toc-rag-in-lesson-planning" class="nav-link" data-scroll-target="#rag-in-lesson-planning"><span class="header-section-number">6.2</span> RAG in Lesson Planning</a></li>
+  <li><a href="#rag-für-das-erstellen-von-anleitungen" id="toc-rag-für-das-erstellen-von-anleitungen" class="nav-link" data-scroll-target="#rag-für-das-erstellen-von-anleitungen"><span class="header-section-number">6.3</span> RAG für das Erstellen von Anleitungen</a></li>
+  <li><a href="#ki-in-der-multi-lingualen-kommunikation" id="toc-ki-in-der-multi-lingualen-kommunikation" class="nav-link" data-scroll-target="#ki-in-der-multi-lingualen-kommunikation"><span class="header-section-number">6.4</span> KI in der Multi-lingualen Kommunikation</a></li>
+  </ul></li>
+  <li><a href="#gesprächsrunde-3-eure-erfahrungen" id="toc-gesprächsrunde-3-eure-erfahrungen" class="nav-link" data-scroll-target="#gesprächsrunde-3-eure-erfahrungen"><span class="header-section-number">7</span> Gesprächsrunde 3: Eure Erfahrungen</a>
+  <ul class="collapse">
+  <li><a href="#p.u.n.k.-framework-für-ki-use-cases" id="toc-p.u.n.k.-framework-für-ki-use-cases" class="nav-link" data-scroll-target="#p.u.n.k.-framework-für-ki-use-cases"><span class="header-section-number">7.1</span> P.U.N.K.-Framework für KI-Use Cases</a></li>
+  </ul></li>
+  <li><a href="#spotlight-ki-tools" id="toc-spotlight-ki-tools" class="nav-link" data-scroll-target="#spotlight-ki-tools"><span class="header-section-number">8</span> Spotlight: KI Tools</a>
+  <ul class="collapse">
+  <li><a href="#claude-artifacts-open-source-gis" id="toc-claude-artifacts-open-source-gis" class="nav-link" data-scroll-target="#claude-artifacts-open-source-gis"><span class="header-section-number">8.1</span> Claude Artifacts &amp; Open-Source GIS</a></li>
+  <li><a href="#github-copilot-in-vs-code" id="toc-github-copilot-in-vs-code" class="nav-link" data-scroll-target="#github-copilot-in-vs-code"><span class="header-section-number">8.2</span> GitHub Copilot in VS Code</a></li>
+  <li><a href="#github-copilot-wie-es-funktioniert" id="toc-github-copilot-wie-es-funktioniert" class="nav-link" data-scroll-target="#github-copilot-wie-es-funktioniert"><span class="header-section-number">8.3</span> GitHub Copilot – Wie es funktioniert</a></li>
+  <li><a href="#google-notebooklm" id="toc-google-notebooklm" class="nav-link" data-scroll-target="#google-notebooklm"><span class="header-section-number">8.4</span> Google NotebookLM</a></li>
+  <li><a href="#google-gemini-omni-video" id="toc-google-gemini-omni-video" class="nav-link" data-scroll-target="#google-gemini-omni-video"><span class="header-section-number">8.5</span> Google Gemini Omni (Video)</a></li>
+  <li><a href="#weitere-tools-die-sich-anzuschauen-lohnen" id="toc-weitere-tools-die-sich-anzuschauen-lohnen" class="nav-link" data-scroll-target="#weitere-tools-die-sich-anzuschauen-lohnen"><span class="header-section-number">8.6</span> Weitere Tools, die sich anzuschauen lohnen</a></li>
+  <li><a href="#und-viel-mehr" id="toc-und-viel-mehr" class="nav-link" data-scroll-target="#und-viel-mehr"><span class="header-section-number">8.7</span> Und viel mehr…</a></li>
+  </ul></li>
+  <li><a href="#workshop-teil-eigener-use-case-kreieren-45-minuten" id="toc-workshop-teil-eigener-use-case-kreieren-45-minuten" class="nav-link" data-scroll-target="#workshop-teil-eigener-use-case-kreieren-45-minuten"><span class="header-section-number">9</span> Workshop-Teil: Eigener Use-case kreieren (45 Minuten)</a></li>
+  <li><a href="#gesprächsrunde-4-vorstellung-von-ideen-und-feedback" id="toc-gesprächsrunde-4-vorstellung-von-ideen-und-feedback" class="nav-link" data-scroll-target="#gesprächsrunde-4-vorstellung-von-ideen-und-feedback"><span class="header-section-number">10</span> Gesprächsrunde 4: Vorstellung von Ideen und Feedback</a></li>
+  <li><a href="#frage-antwort-10-minuten" id="toc-frage-antwort-10-minuten" class="nav-link" data-scroll-target="#frage-antwort-10-minuten"><span class="header-section-number">11</span> Frage &amp; Antwort (10 Minuten)</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="header-section-number">12</span> Key Takeaways</a></li>
+  <li><a href="#kontakt" id="toc-kontakt" class="nav-link" data-scroll-target="#kontakt"><span class="header-section-number">13</span> Kontakt</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Coworkers Workshop: KI verstehen und nutzen</h1>
+<p class="subtitle lead">HERZLICH WILLKOMMEN!</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Simon Kloker </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="begrüßung-und-vorstellung-der-teilnehmer" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Begrüßung und Vorstellung der Teilnehmer</h1>
+<section id="wer-ist-im-raum" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="wer-ist-im-raum"><span class="header-section-number">1.1</span> Wer ist im Raum?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/greeting.png" class="img-fluid figure-img"></p>
+<figcaption>Quelle: KI-generiert, offensichtlich…</figcaption>
+</figure>
+</div>
+<p><strong>Frage:</strong> “Ein Wort zu dir, wie ist dir KI heute begegnet und mit welcher Erwartung bist du heute hier?”</p>
+</section>
+<section id="zu-mir" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="zu-mir"><span class="header-section-number">1.2</span> Zu mir…</h2>
+<ul>
+<li>Bis 2025: Als Berater für KI und IoT in Uganda</li>
+<li>Seit 2026: Professur für Wirtschaftsinformatik an der HWG Ludwigshafen</li>
+<li>Ehemann und Vater von 4 Kindern</li>
+<li>Wahlheimat: Karlsbad (bei Karlsruhe)</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Vorsicht
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Meine schwäbischen Wurzeln könnten sich in meiner Artikulation bemerkbar machen, aber keine Sorge, ich werde mein Bestes geben, damit es verständlich bleibt!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="ablauf-und-ziele-des-workshops" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="ablauf-und-ziele-des-workshops"><span class="header-section-number">1.3</span> Ablauf und Ziele des Workshops</h2>
+<ul>
+<li>Dies ist ein <strong>Workshop</strong>, kein Vortrag - es soll viel Raum für Austausch und Diskussion geben</li>
+<li>Ziel ist es eine Balance zu finden zwischen Input und Interaktion, damit alle Teilnehmer aktiv mitmachen können</li>
+</ul>
+<div class="fragment">
+<p>Meine 3 Ziele 🎯 für heute:</p>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Sprachfähig machen:</strong> In der Lage sein, über KI zu sprechen, Chancen und Risiken zu benennen, Fragen zu stellen.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Sensibilisieren:</strong> Ethische, kulturelle und datenschutzrechtliche Aspekte von KI.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Inspiration geben:</strong> Konkrete Anwendungsfälle und Ideen für den eigenen Kontext mitnehmen.</li>
+</ul>
+</div>
+</section>
+<section id="expertise-spektrum" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="expertise-spektrum"><span class="header-section-number">1.4</span> Expertise-Spektrum</h2>
+<pre><code>       Basiswissen       Versierter Nutzer        Profi           Experte
+            |--------------------------------------------------------|</code></pre>
+<div class="fragment">
+<pre><code>               🐣</code></pre>
+</div>
+<div class="fragment">
+<pre><code>                                👨🏻‍💻</code></pre>
+</div>
+<div class="fragment">
+<pre><code>                                                            🧐</code></pre>
+</div>
+<div class="fragment">
+<pre><code>   🍳</code></pre>
+</div>
+<pre><code>            |--------------------------------------------------------|
+       Basiswissen       Versierter Nutzer        Profi           Experte</code></pre>
+<div class="fragment">
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Wir werden uns heute eher auf die linke Seite des Spektrums konzentrieren, also auf die Grundlagen und die Möglichkeiten. Aber es ist nicht gesetzt, dass nur ich hier Input gebe. Wer schon weitere Erfahrungen hat - technisch oder in der Anwendung - positiv wie auch negativ - bitte teilen. Wir möchten vor allem Sprachfähigkeit erweitern und positive Nutzen inspirieren.</p>
+<p><strong>“Keine Frage ist zu basic.”</strong></p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Primer
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Uns Coworkers eint, dass wir alle Coworker in Gottes Auftrag sind. Trotz dieser Einigkeit heißt das nicht, dass wir alle die gleichen Vorkenntnisse und auch Meinungen im Bezug auf KI haben.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="ablauf" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="ablauf"><span class="header-section-number">1.5</span> Ablauf</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">gantt
+    title Workshop Ablauf 180 Minuten
+    dateFormat HH:mm
+    axisFormat %H:%M
+
+    section Programm
+    Ankommen und Einstieg                 :a1, 12:00, 10m
+    Spotlight Generative KI und Agentic AI :crit, a2, after a1, 10m
+    Gesprächsrunde 1                     :a3, after a2, 10m
+    Spotlight Kultur und Bias             :crit, a4, after a3, 10m
+    Gesprächsrunde 2                     :a5, after a4, 10m
+    Spotlight Use Cases                   :crit, a6, after a5, 10m
+    Gesprächsrunde 3                     :a7, after a6, 10m
+    Spotlight KI Tools                    :crit, a8, after a7, 10m
+    Workshop Eigener Use Case             :a9, after a8, 45m
+    Gesprächsrunde 4                     :a10, after a9, 20m
+    Frage und Antwort                     :a11, after a10, 20m
+    Feedback und Abschluss                :a12, after a11, 15m
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="spotlight-generative-ki-und-agentic-ai" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Spotlight: Generative KI und Agentic AI</h1>
+<section id="begrifflichkeiten-im-kontext-genai" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="begrifflichkeiten-im-kontext-genai"><span class="header-section-number">2.1</span> Begrifflichkeiten im Kontext GenAI</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+    %% Globale Text- und Farbstile (Pastell &amp; Hochkontrast)
+    classDef default fill:#ffffff,stroke:#333333,stroke-width:1px,color:#111111;
+    
+    classDef boxData fill:#ffffff,stroke:#ffb703,stroke-width:2px,color:#111111;
+    classDef boxArch fill:#ffffff,stroke:#fb8500,stroke-width:2px,color:#111111;
+    classDef boxApp fill:#ffffff,stroke:#219ebc,stroke-width:2px,color:#111111;
+    classDef boxAgent fill:#ffffff,stroke:#023047,stroke-width:2px,color:#111111;
+
+    %% SCHICHT 1: DATEN &amp; BASIS (Gelb-Orange)
+    subgraph S1["1. INPUT &amp; EMBEDDINGS"]
+        Data["Rohdaten&lt;br&gt;(Text / Bild)"] --&gt; Embed["Embeddings&lt;br&gt;(Vektoren)"]
+    end
+    style S1 fill:#fffbe6,stroke:#ffb703,stroke-width:1px,color:#111111;
+    class Data,Embed boxData;
+
+    %% SCHICHT 2: DIE ARCHITEKTUREN (Kräftiges Orange)
+    subgraph S2["2. ARCHITEKTUREN"]
+        Trans["Transformer&lt;br&gt;(Attention)"]
+        VAE["VAE&lt;br&gt;(Kompression)"] -.-&gt; Diff["Diffusion&lt;br&gt;(Rausch-Reduktion)"]
+        GAN["GANs&lt;br&gt;(Wettstreit)"]
+    end
+    style S2 fill:#fff5eb,stroke:#fb8500,stroke-width:1px,color:#111111;
+    class Trans,VAE,Diff,GAN boxArch;
+
+    %% SCHICHT 3: DIE PRODUKTE (Helles Cyan/Blau)
+    subgraph S3["3. MODELL-TYPEN"]
+        LLM["LLMs (Sprachmodelle)&lt;br&gt;(GPT, Llama, Claude)"]
+        ImgGen["Bild / Video Gen&lt;br&gt;(Midjourney, Stable Diff.)"]
+    end
+    style S3 fill:#f0f8ff,stroke:#219ebc,stroke-width:1px,color:#111111;
+    class LLM,ImgGen boxApp;
+
+    %% SCHICHT 4: OBERBAU (Dunkelblaues System)
+    subgraph S4["4. SYSTEME"]
+        Agent["Agentic AI&lt;br&gt;(Autonome Agenten)"]
+    end
+    style S4 fill:#e6f0fa,stroke:#023047,stroke-width:1px,color:#111111;
+    class Agent boxAgent;
+
+    %% VERBINDUNGEN
+    Embed --&gt; Trans
+    Data --&gt; VAE
+    
+    Trans --&gt; LLM
+    Diff --&gt; ImgGen
+    GAN --&gt; ImgGen
+    
+    LLM --&gt; Agent
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Noch Fragen?</strong></p>
+</div>
+</section>
+<section id="woher-kommt-generative-ki" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="woher-kommt-generative-ki"><span class="header-section-number">2.2</span> Woher kommt Generative KI?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/recent_history_of_langauge_ai.png" class="img-fluid figure-img"></p>
+<figcaption>Quelle: <span class="citation" data-cites="alammar2024handson">Alammar and Grootendorst (<a href="#ref-alammar2024handson" role="doc-biblioref">2024</a>)</span></figcaption>
+</figure>
+</div>
+</section>
+<section id="natural-language-processing" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="natural-language-processing"><span class="header-section-number">2.3</span> “Natural Language Processing”</h2>
+<p>Die Anfänge der modernen generativen KI liegen in der Forschung zu Natural Language Processing (NLP).</p>
+<ul>
+<li>NLU (Natural Language Understanding): Fokus auf das Verstehen von Texten, z.B. Sentiment-Analyse, Named Entity Recognition.</li>
+<li>NLG (Natural Language Generation): Fokus auf die Erzeugung von Texten, z.B. Textzusammenfassung, maschinelles Übersetzen.</li>
+</ul>
+<div class="fragment">
+<p>Das große Problem: Semantik.</p>
+</div>
+</section>
+<section id="embeddings-brücke-zwischen-text-und-seiner-semantik-und-mathematik" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="embeddings-brücke-zwischen-text-und-seiner-semantik-und-mathematik"><span class="header-section-number">2.4</span> Embeddings: Brücke zwischen Text und seiner Semantik und Mathematik</h2>
+<section id="zweidimensional" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="zweidimensional"><span class="header-section-number">2.4.1</span> Zweidimensional</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/sueddeutschland.png" class="img-fluid figure-img"></p>
+<figcaption>Kein schöner Land in dieser Zeit… (Quelle: Open Street Map)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/sueddeutschland_kreise.png" class="img-fluid figure-img"></p>
+<figcaption>Kein schöner Land in dieser Zeit… (Quelle: Open Street Map)</figcaption>
+</figure>
+</div>
+<div class="fragment">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ähnliche Koordinaten bedeuten ähnliche Bedeutung - das ist die Grundlage für semantische Suche, Textähnlichkeit und letztlich auch für die Generierung von Texten.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="dreidimensional" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="dreidimensional"><span class="header-section-number">2.4.2</span> Dreidimensional</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/haus.png" class="img-fluid figure-img"></p>
+<figcaption>Beispiel Haus (Quelle: Google Gemini)</figcaption>
+</figure>
+</div>
+</section>
+<section id="mehrdimensionale-embeddings-von-wörtern-sätzen-dokumenten" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="mehrdimensionale-embeddings-von-wörtern-sätzen-dokumenten"><span class="header-section-number">2.4.3</span> Mehrdimensionale Embeddings von Wörtern, Sätzen, Dokumenten</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/embeddings_dimensions_concepts.png" class="img-fluid figure-img"></p>
+<figcaption>Quelle: <span class="citation" data-cites="alammar2024handson">Alammar and Grootendorst (<a href="#ref-alammar2024handson" role="doc-biblioref">2024</a>)</span></figcaption>
+</figure>
+</div>
+<div class="fragment">
+<p>Diese Embeddings werden durch Trainingsprozesse erzeugt, bei denen das Modell lernt, Wörter oder Sätze in einem mehrdimensionalen Raum so zu platzieren, dass semantisch ähnliche Einheiten nahe beieinander liegen.</p>
+<p>Semantisch ähnlich bedeutet während dem Training, dass sie in ähnlichen Kontexten vorkommen.</p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/embeddings.png" class="img-fluid figure-img"></p>
+<figcaption>Quelle: <span class="citation" data-cites="alammar2024handson">Alammar and Grootendorst (<a href="#ref-alammar2024handson" role="doc-biblioref">2024</a>)</span></figcaption>
+</figure>
+</div>
+<p><br>
+<br>
+</p>
+<ul>
+<li>Embedding ist eine mathematische Repräsentation von Texten, die es ermöglicht, <strong>semantische Beziehungen zu erfassen</strong>!</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Embedding funktioniert nicht nur für Wörter, sondern auch für Sätze, Absätze oder ganze Dokumente.</li>
+<li>Embedding funktioniert auch für Bilder, Audio oder andere Datenformen - das nennt man Multimodalität.</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="vom-embedding-zur-generierung-transformer-architektur" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="vom-embedding-zur-generierung-transformer-architektur"><span class="header-section-number">2.5</span> Vom Embedding zur Generierung: Transformer-Architektur</h2>
+<section id="das-ganze-funktioniert-auch-rückwärts-von-der-semantik-zum-text" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="das-ganze-funktioniert-auch-rückwärts-von-der-semantik-zum-text"><span class="header-section-number">2.5.1</span> Das ganze funktioniert auch rückwärts: von der Semantik zum Text!</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/encoder-decoder.png" class="img-fluid figure-img"></p>
+<figcaption>Quelle: <span class="citation" data-cites="alammar2024handson">Alammar and Grootendorst (<a href="#ref-alammar2024handson" role="doc-biblioref">2024</a>)</span></figcaption>
+</figure>
+</div>
+</section>
+<section id="aber" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="aber"><span class="header-section-number">2.5.2</span> Aber…</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/sueddeutschland_altheim.png" class="img-fluid figure-img"></p>
+<figcaption>Kein schöner Land in dieser Zeit… (Quelle: Open Street Map)</figcaption>
+</figure>
+</div>
+</section>
+<section id="attention-is-all-you-need" class="level3" data-number="2.5.3">
+<h3 data-number="2.5.3" class="anchored" data-anchor-id="attention-is-all-you-need"><span class="header-section-number">2.5.3</span> Attention is all you need</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/attention.png" class="img-fluid figure-img"></p>
+<figcaption>Quelle: <span class="citation" data-cites="alammar2024handson">Alammar and Grootendorst (<a href="#ref-alammar2024handson" role="doc-biblioref">2024</a>)</span></figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/focus.png" class="img-fluid figure-img"></p>
+<figcaption>Quelle: <span class="citation" data-cites="alammar2024handson">Alammar and Grootendorst (<a href="#ref-alammar2024handson" role="doc-biblioref">2024</a>)</span></figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/transformer.png" class="img-fluid figure-img"></p>
+<figcaption>Quelle: <span class="citation" data-cites="alammar2024handson">Alammar and Grootendorst (<a href="#ref-alammar2024handson" role="doc-biblioref">2024</a>)</span></figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/gpt-1.png" class="img-fluid figure-img"></p>
+<figcaption>Quelle: <span class="citation" data-cites="alammar2024handson">Alammar and Grootendorst (<a href="#ref-alammar2024handson" role="doc-biblioref">2024</a>)</span></figcaption>
+</figure>
+</div>
+<p><br>
+<br>
+</p>
+<ul>
+<li>Mit dieser Architektur wird es mögllich, Texte zu generieren, die auf den Kontext der vorherigen Wörter oder Sätze abgestimmt sind - das ist die Grundlage für die Generierung von Texten durch LLMs.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Ein LLM sagt nicht “Das ist die richtige Antwort”, sondern “Das ist die wahrscheinlichste Fortsetzung basierend auf den Trainingsdaten und dem Kontext” - der “Kontext” ist dabei alles was vor dem aktuellen Token steht.</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Das ist die Grundlage für die Generierung von Texten durch LLMs.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Moderne LLMs sind in Realität nochmals deutlich komplexer, als das hier dargestellte Decoder-Modell. Aber die Logik bleibt gleich: Sie generieren Text, indem sie das nächste Wort vorhersagen, basierend auf dem Kontext der vorherigen Wörter und den Mustern, die sie in ihren Trainingsdaten gelernt haben.</p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Bildmodelle
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Bildmodelle funktionieren ähnlich, aber statt Text zu generieren, generieren sie Bilder, indem sie schrittweise Rauschen reduzieren oder konkurrierende Netzwerke trainieren.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="agentic-ai-von-chat-zu-agenten" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="agentic-ai-von-chat-zu-agenten"><span class="header-section-number">2.6</span> Agentic AI: Von Chat zu Agenten</h2>
+<p>Ein KI-Agent ist ein System, das nicht nur auf Anfragen reagiert, sondern auch proaktiv Aufgaben ausführt, Entscheidungen trifft und mit anderen Systemen oder Menschen interagiert, um Ziele zu erreichen.</p>
+<div class="fragment">
+<p>Aber selbst hier ist die Grundlage immer noch ein LLM, das als “Gehirn” fungiert, um Informationen zu verarbeiten und Entscheidungen zu treffen, während andere Komponenten (Tools, Speicher, Schleifen) hinzugefügt werden, um die Funktionalität zu erweitern.</p>
+</div>
+<div class="fragment">
+<p>Der Agent spricht ständig mit sich selbst wobei er seine eigenen Outputs als neuen Kontext nutzt, um komplexe Aufgaben zu bewältigen, die über einfache Anfragen hinausgehen. Hinzu kommt nach jeder Aktion das Feedback aus dieser Aktion, um die nächsten Schritte zu planen - das ist der Loop.</p>
+</div>
+</section>
+<section id="zusammenfassung" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="zusammenfassung"><span class="header-section-number">2.7</span> Zusammenfassung</h2>
+<div class="fragment">
+<ul>
+<li>Kann ein LLM denken?</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Ist ein LLM objektiv?</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Hat ein LLM immer Recht?</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Hat ein LLM ein Bewusstsein?</li>
+</ul>
+</div>
+</section>
+<section id="fun-fact-vergleich-gehirn-und-llms" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="fun-fact-vergleich-gehirn-und-llms"><span class="header-section-number">2.8</span> Fun Fact: Vergleich Gehirn und LLMs</h2>
+<p>Forschung hat gezeigt das LLMs Konzepte vorwiegend um Substantive organisieren. Aktuelle Hirnforschung zeigt, dass unser Gehirn im Vorhersagen von Sprache auch stark auf Substantive fokussiert ist, während Verben und andere Wortarten weniger stark vorhergesagt werden.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/nouns_areals.png" class="img-fluid figure-img"></p>
+<figcaption>Quelle: <span class="citation" data-cites="Koelbl2026">Kölbl et al. (<a href="#ref-Koelbl2026" role="doc-biblioref">2026</a>)</span></figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="gesprächsrunde-1-trigger-warnung" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Gesprächsrunde 1: Trigger-Warnung</h1>
+<p>KI kann sehr viel (wir werden nacher noch einiges sehen.)</p>
+<div class="fragment">
+<p>Sicher habt ihr auch schon einiges gesehen.</p>
+</div>
+<div class="fragment">
+<p>KI hat übrigens auch die meisten der Folien, die ihr eben gesehen habt, generiert - ich musste da vergleichsweise wenig Aufwand reinstecken. Vielleicht nicht ganz perfekt, aber doch ok… :)</p>
+</div>
+<section id="jetzt-wo-ihr-das-wisst-wie-geht-es-euch-damit" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="jetzt-wo-ihr-das-wisst-wie-geht-es-euch-damit"><span class="header-section-number">3.1</span> 🤔 Jetzt, wo ihr das wisst… Wie geht es euch damit?</h2>
+<div class="fragment">
+<ul>
+<li>beeindruckt?</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>enttäuscht?</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>ambivalent?</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Wie geht es euch z.B. damit wenn ein Mitarbeiter/Kollege in eurem Einsatz KI nutzt um eine von euch zugeteilte Aufgabe zu erledigen? Hängt es auch von der Qualität ab?</li>
+</ul>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/graham.png" class="img-fluid figure-img"></p>
+<figcaption>Quelle: <span class="citation" data-cites="the_decoder_graham_ai_2026">Bastian (<a href="#ref-the_decoder_graham_ai_2026" role="doc-biblioref">2026</a>)</span></figcaption>
+</figure>
+</div>
+</section>
+<section id="ki-trigger" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="ki-trigger"><span class="header-section-number">3.2</span> KI-Trigger</h2>
+<ul>
+<li>2 Minuten stilles Nachdenken: “Was triggert mich bei KI am meisten - positiv/negativ?”</li>
+</ul>
+<div class="fragment">
+<ul>
+<li><strong>Wer möchte einen Gedanken mit der Gruppe teilen?</strong></li>
+</ul>
+</div>
+<div class="fragment">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Ambivalenz normalisieren
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Man darf gleichzeitig <strong>skeptisch UND interessiert</strong> sein.</p>
+<p>Es ist normal, dass KI sowohl Chancen als auch Risiken in sich trägt, und es ist wichtig, beide Seiten zu betrachten, um eine ausgewogene Perspektive zu entwickeln.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="spotlight-ki-und-kultur-10-minuten" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Spotlight: KI und Kultur (10 Minuten)</h1>
+<section id="selfies-and-culture" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="selfies-and-culture"><span class="header-section-number">4.1</span> Selfies and Culture</h2>
+<div class="columns">
+<div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/as_native_americans.png" class="img-fluid figure-img"></p>
+<figcaption>AI generated image of Navtive Americans selfie</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/as_east_europe.png" class="img-fluid figure-img"></p>
+<figcaption>AI generated image of Eastern European soldiers in 2023 selfie</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/as_ancient_polinesian_warriors.png" class="img-fluid figure-img"></p>
+<figcaption>AI generated image of Ancient Polynesian Warriors selfie</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/nas_native_americans.png" class="img-fluid figure-img"></p>
+<figcaption>Group of Apache Men, with Chief Al-Che-Zay (Middle Row, Dark Vest)</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/nas_east_europe.png" class="img-fluid figure-img"></p>
+<figcaption>Ukraenian soldiers posing with president Zelensky for a selfie</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/nas_ancient_polinesian_warriors.png" class="img-fluid figure-img"></p>
+<figcaption>Traditional Māori Haka ceremony</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div style="font-size: 0.7em;">
+<p>Quelle: <span class="citation" data-cites="Jenka2023">Jenka (<a href="#ref-Jenka2023" role="doc-biblioref">2023</a>)</span></p>
+</div>
+</section>
+<section id="what-are-smiles-trained-on" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="what-are-smiles-trained-on"><span class="header-section-number">4.2</span> What are smiles “trained on”?</h2>
+<blockquote class="blockquote">
+<p>How we smile, when we smile, why we smile, and what it means is deeply culturally contextual.</p>
+</blockquote>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/as_selfie.png" class="img-fluid figure-img"></p>
+<figcaption>Selfie of american smiling</figcaption>
+</figure>
+</div>
+</div>
+<div style="font-size: 0.7em;">
+<p>Quelle: <span class="citation" data-cites="Jenka2023">Jenka (<a href="#ref-Jenka2023" role="doc-biblioref">2023</a>)</span></p>
+</div>
+</section>
+<section id="the-moral-machine" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="the-moral-machine"><span class="header-section-number">4.3</span> The Moral Machine</h2>
+<p>The Moral Machine Study: <a href="https://www.moralmachine.net/hl/de">https://www.moralmachine.net/hl/de</a> 🌐</p>
+</section>
+<section id="zusammenfassung-1" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="zusammenfassung-1"><span class="header-section-number">4.4</span> Zusammenfassung</h2>
+<p>Wer KI “importiert”, importiert auch die kulturellen Werte, Normen und Biases, die in den Trainingsdaten und der Architektur der KI enthalten sind.</p>
+</section>
+<section id="weitere-unterschiede" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="weitere-unterschiede"><span class="header-section-number">4.5</span> Weitere Unterschiede</h2>
+<p>Unterschiede gibt es aber nicht nur in den Ergebnissen, sondern auch in der Nutzung von KI - z.B. in der Akzeptanz, der Bereitschaft zur Nutzung, der Art und Weise wie KI in Arbeitsprozesse integriert wird, …</p>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/ipsos_benefits.png" class="img-fluid figure-img"></p>
+<figcaption>Quelle: <span class="citation" data-cites="IpsosAIMonitor2024">Ipsos (<a href="#ref-IpsosAIMonitor2024" role="doc-biblioref">2024</a>)</span></figcaption>
+</figure>
+</div>
+</div>
+</section>
+</section>
+<section id="gesprächsrunde-2-mein-platz-zwischen-ki-und-einsatz" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Gesprächsrunde 2: Mein Platz zwischen KI und Einsatz</h1>
+<ul>
+<li>Wie nehmt ihr die KI Nutzung in euren Kontexten wahr? Gibt es kulturelle Unterschiede in der Akzeptanz oder Nutzung von KI, die euch aufgefallen sind?</li>
+</ul>
+<section id="meine-leistung-seine-leistung-unsere-leistung" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="meine-leistung-seine-leistung-unsere-leistung"><span class="header-section-number">5.1</span> Meine Leistung, seine Leistung, unsere Leistung</h2>
+<blockquote class="blockquote">
+<p>Beispiel meiner Studierender…</p>
+</blockquote>
+<div class="fragment">
+<p><strong>Gedanken zur Anregung:</strong></p>
+<ul>
+<li>Verschiedene Kulturen haben ein unterschiedliches Verhältnis zu Integrität, intellektueller Eigentum oder auch Qualität.</li>
+<li>Viele werden es nutzen, Studien zeigen eher mehr Zurückhaltung in DE als in anderen Kulturen.</li>
+<li>Expertise ist mehr demokratisiert - was bedeutet das für mich und meinen Input als Entwicklungshelfer?</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Weitere Fragen zur Anregung:</strong></p>
+<ul>
+<li>Habt ihr das Gefühl von rechts überholt zu werden, wenn ihr KI nicht nutzt?</li>
+<li>Was könnt ihr in eurem Einsatz beisteuern, wenn KI Wissen demokratisiert?</li>
+<li>Was ist mit den Menschen, die keinen Zugang zu KI haben?</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="spotlight-use-cases" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Spotlight: Use Cases</h1>
+<section id="blick-richtung-nutzung" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="blick-richtung-nutzung"><span class="header-section-number">6.1</span> Blick Richtung Nutzung</h2>
+<p>3 Use Cases in der Entwicklungszusammenarbeit:</p>
+<ul>
+<li>RAG in Lesson Planning</li>
+<li>RAG für das Erstellen von Anleitungen</li>
+<li>KI in der Multi-lingualen Kommunikation</li>
+</ul>
+</section>
+<section id="rag-in-lesson-planning" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="rag-in-lesson-planning"><span class="header-section-number">6.2</span> RAG in Lesson Planning</h2>
+<p>🪧 Demonatration…</p>
+</section>
+<section id="rag-für-das-erstellen-von-anleitungen" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="rag-für-das-erstellen-von-anleitungen"><span class="header-section-number">6.3</span> RAG für das Erstellen von Anleitungen</h2>
+<p>🪧 Demonatration…</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/uganda_wash.png" class="img-fluid figure-img"></p>
+<figcaption>Uganda WASH Coordinator. Quelle: Eigene Darstellung</figcaption>
+</figure>
+</div>
+</section>
+<section id="ki-in-der-multi-lingualen-kommunikation" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="ki-in-der-multi-lingualen-kommunikation"><span class="header-section-number">6.4</span> KI in der Multi-lingualen Kommunikation</h2>
+<section id="barrierefreie-wissensvermittlung-durch-audio-zu-audio-ki" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="barrierefreie-wissensvermittlung-durch-audio-zu-audio-ki"><span class="header-section-number">6.4.1</span> Barrierefreie Wissensvermittlung durch Audio-zu-Audio KI</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Key Points:</strong></p>
+<ul>
+<li><strong>Inklusion sichern:</strong> Erreicht Zielgruppen mit geringer Alphabetisierungsrate direkt in ihrer lokalen Sprache.</li>
+<li><strong>Skalierbarkeit:</strong> Fachwissen (z.B. Agrar- oder Hygienetipps) wird ohne menschliche Dolmetscher-Engpässe übersetzt.</li>
+<li><strong>Natürliche Tonalität:</strong> Erhalt von emotionaler Resonanz und Vertrauen durch natürlich gesprochene Audio-Outputs.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Relevante Technologien:</strong></p>
+<ul>
+<li><strong>STT</strong> (Speech-to-Text) zur Transkription.</li>
+<li><strong>LLM-Translation</strong> zur Kontext-Übersetzung (auch für Minoritätensprachen).</li>
+<li><strong>TTS</strong> (Text-to-Speech) mit Voice-Cloning und lokaler Dialekt-Synthese.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="wordly-ai" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="wordly-ai"><span class="header-section-number">6.4.2</span> Wordly AI</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/wordly.png" class="img-fluid figure-img"></p>
+<figcaption>Wordly AI. Quelle: <span class="citation" data-cites="tupper2024">Tupper (<a href="#ref-tupper2024" role="doc-biblioref">2024</a>)</span></figcaption>
+</figure>
+</div>
+<p><a href="https://www.wordly.ai/de">https://www.wordly.ai/de</a></p>
+</section>
+<section id="wissens-synthese" class="level3" data-number="6.4.3">
+<h3 data-number="6.4.3" class="anchored" data-anchor-id="wissens-synthese"><span class="header-section-number">6.4.3</span> Wissens-Synthese</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Key Points:</strong></p>
+<ul>
+<li><strong>Wissen kontextualisieren:</strong> KI fasst Berichte aus verschiedenen Regionen zusammen und extrahiert relevante Erkenntnisse für die lokale Nutzung.</li>
+<li><strong>Silos aufbrechen:</strong> Durchsucht Berichte aus Westafrika (Französisch), Lateinamerika (Spanisch) und Asien simultan.</li>
+<li><strong>Effizienzsteigerung:</strong> Keine manuelle Übersetzung und Überarbeitung hunderter PDF-Seiten für Evaluierungen mehr nötig.</li>
+<li><strong>Direkter Transfer:</strong> Erkenntnisse (Lessons Learned) werden sofort in der eigenen Arbeitssprache nutzbar.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Relevante Technologien:</strong></p>
+<ul>
+<li><strong>RAG-Architektur</strong> (Retrieval-Augmented Generation) zur präzisen Dokumentenabfrage.</li>
+<li><strong>Multilinguale Embeddings</strong> (Vektorisierung von Texten über Sprachgrenzen hinweg).</li>
+<li><strong>Cross-Lingual Information Retrieval</strong> (CLIR).</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="lokalisierung-cultural-framing-statt-wort-für-wort-übersetzung" class="level3" data-number="6.4.4">
+<h3 data-number="6.4.4" class="anchored" data-anchor-id="lokalisierung-cultural-framing-statt-wort-für-wort-übersetzung"><span class="header-section-number">6.4.4</span> Lokalisierung &amp; “Cultural Framing” statt Wort-für-Wort-Übersetzung</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Key Points:</strong></p>
+<ul>
+<li><strong>Akzeptanz schaffen:</strong> Passt den Tonfall an lokale Hierarchien und kulturelle Gepflogenheiten an (z.B. Einbindung von Dorfältesten).</li>
+<li><strong>Zielgruppen-Adaption:</strong> Transformiert bürokratisches “Geber-Deutsch” in leicht verständliche, wertschätzende Botschaften.</li>
+<li><strong>Fehler minimieren:</strong> Verhindert diplomatische oder soziale Missverständnisse vor Ort.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Relevante Technologien:</strong></p>
+<ul>
+<li><strong>Prompt Engineering</strong> mit vordefinierten Personas und kulturellen Kontext-Datenbanken.</li>
+<li><strong>Advanced LLMs</strong> mit tiefem Verständnis für soziokulturelle Nuancen.</li>
+<li><strong>Automated Style- &amp; Tone-Shifting</strong>.</li>
+</ul>
+</div>
+</div>
+<p><strong>Beispiel Prompt für Cultural Framing:</strong></p>
+<pre><code>Du bist ein KI-Experte für multilinguale und interkulturelle Kommunikation in der internationalen Entwicklungszusammenarbeit (EZ). Deine Spezialität ist "Cultural Framing" – also das Übersetzen und Anpassen von Texten, damit sie nicht nur grammatikalisch korrekt sind, sondern den soziokulturellen Kontext der Zielgruppe perfekt respektieren.
+
+Ich werde dir gleich einen typischen, sehr bürokratischen und direkt formulierten Textabschnitt aus einem deutschen Projektdokument geben. 
+
+Deine Aufgabe ist es, diesen Text für zwei völlig unterschiedliche Zielgruppen in [ZIELSPRACHE, z.B. Französisch oder Swahili - hier anpassen] zu transformieren.
+
+Bitte strukturiere deine Antwort wie folgt:
+
+1. Kulturelle Analyse (Kurz auf Deutsch): Welche Stolpersteine (Hierarchien, Tonfall, Tabus, Verständlichkeit) lauern im deutschen Originaltext für die jeweilige Zielgruppe?
+2. Zielgruppe 1: Lokale Kleinbäuerinnen und Kleinbauern in einer ländlichen Region (Fokus auf: Augenhöhe, verständliche Metaphern, Respekt vor Gemeinschaftsstrukturen, mündlicher Charakter).
+3. Zielgruppe 2: Vertreter des lokalen Landwirtschaftsministeriums / Behörden vor Ort (Fokus auf: Formale Etikette, Anerkennung ihrer Autorität, bürokratische Präzision der Region).
+
+Gib mir für beide Zielgruppen die übersetzte/angepasste Version und erkläre kurz (auf Deutsch) in Klammern dahinter, WARUM du bestimmte Formulierungen geändert hast.
+
+Hier ist das deutsche Textbeispiel, das du transformieren sollst:
+"Bezugnehmend auf das Projektdokument XY fordern wir die Zielgruppe auf, die neuen, effizienteren Bewässerungszyklen strikt einzuhalten. Die bisherige Praxis der traditionellen Überflutung führt zu massiver Wasserverschwendung und gefährdet die Projektziele sowie die Auszahlung weiterer Fördermittel. Zuwiderhandlungen müssen sanktioniert werden, um die Ressourcenknappheit zu managen."</code></pre>
+</section>
+</section>
+</section>
+<section id="gesprächsrunde-3-eure-erfahrungen" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Gesprächsrunde 3: Eure Erfahrungen</h1>
+<p>Welche Tools nutzt ihr schon? Was habt ihr schon ausprobiert? Was würdet ihr gerne ausprobieren?</p>
+<section id="p.u.n.k.-framework-für-ki-use-cases" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="p.u.n.k.-framework-für-ki-use-cases"><span class="header-section-number">7.1</span> P.U.N.K.-Framework für KI-Use Cases</h2>
+<p>&nbsp;<br>
+</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="fragment">
+<p><strong>P</strong> - Problemstellung</p>
+<ul>
+<li>Welches reale Projekthindernis lag vor?</li>
+<li>Wer war die betroffene Zielgruppe?</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>U</strong> - Umsetzung &amp; Tool</p>
+<ul>
+<li>Welches KI-Werkzeug kam zum Einsatz?</li>
+<li>Wie sah der konkrete Workflow aus?</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<p><strong>N</strong> - Nutzen (Messbar)</p>
+<ul>
+<li>Was hat sich konkret verbessert?</li>
+<li>Zeitersparnis, Reichweite oder Qualität?</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>K</strong> - Kontext &amp; Kultur</p>
+<ul>
+<li>Wie hat das lokale Umfeld reagiert?</li>
+<li>Welche Rolle spielten Vertrauen und Akzeptanz?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><em>P.S.: Das P.U.N.K.-Framework hat die KI extra für mich erfunden. 🤹</em></p>
+</div>
+</section>
+</section>
+<section id="spotlight-ki-tools" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Spotlight: KI Tools</h1>
+<section id="claude-artifacts-open-source-gis" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="claude-artifacts-open-source-gis"><span class="header-section-number">8.1</span> Claude Artifacts &amp; Open-Source GIS</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 72%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aspekt</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Funktionsweise</strong></td>
+<td>Generiert Code (HTML, JS, SVG, GeoJSON) direkt im Chat. Öffnet parallel ein <strong>interaktives Vorschaufenster</strong>, das Mini-Apps, Dashboards oder Karten (<em>Leaflet.js</em>) live im Browser rendert.</td>
+</tr>
+<tr class="even">
+<td><strong>Hosting &amp; Datenschutz</strong></td>
+<td><strong>Cloud (USA - Anthropic)</strong>. Daten im Free Tier können zum Modelltraining genutzt werden. <em>Wichtig:</em> Keine personenbezogenen oder hochsensiblen Feldkoordinaten eingeben (nur aggregierte/anonymisierte Daten).</td>
+</tr>
+<tr class="odd">
+<td><strong>Preise &amp; Free Tier</strong></td>
+<td><strong>Dauerhaft kostenlos verfügbar</strong> (über das Standard-Webinterface von Claude). Das Limit ist dynamisch (je nach Serverauslastung ca. 15–40 Nachrichten alle 5 Stunden).</td>
+</tr>
+<tr class="even">
+<td><strong>Live-Demo-Use-Case</strong></td>
+<td><strong>Interaktives Brunnen-Dashboard für Kenia</strong></td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://claude.ai/artifacts">https://claude.ai/artifacts</a></p>
+<p><strong>Demo-Prompt:</strong></p>
+<pre><code>Erstelle mir ein interaktives Leaflet.js-Dashboard als HTML-Artifact. Ich brauche eine Karte einer fiktiven Region in Kenia mit 3 Markern für Brunnen. Grün = Funktioniert, Rot = Defekt. Wenn man auf einen Marker klickt, soll die Anzahl der versorgten Menschen (z.B. 400) angezeigt werden. Füge einen Filter-Button für 'Nur defekte Brunnen' hinzu
+
+Füge eine Funktion hinzu in der ich alle Brunnen in einer Tabelle verwalten kann und die Geodaten ändern kann. Und ich möchte neue Brunnen über einen Klick auf eine Position in der Karte anlegen können.</code></pre>
+</section>
+<section id="github-copilot-in-vs-code" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="github-copilot-in-vs-code"><span class="header-section-number">8.2</span> GitHub Copilot in VS Code</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 72%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aspekt</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Funktionsweise</strong></td>
+<td>KI-Assistent direkt in der IDE (VS Code). Analysiert den Kontext (Code &amp; Kommentare) und schlägt per <strong>Autovervollständigung</strong> (Inline Suggestions) Codezeilen oder ganze Funktionen vor.</td>
+</tr>
+<tr class="even">
+<td><strong>Hosting &amp; Datenschutz</strong></td>
+<td><strong>Cloud (USA - Microsoft/GitHub)</strong>. Code wird zur Verarbeitung übertragen. In kommerziellen Tarifen kein Modelltraining; im Free Tier gelten lockerere Richtlinien.</td>
+</tr>
+<tr class="odd">
+<td><strong>Preise &amp; Free Tier</strong></td>
+<td><strong>Kostenloses Kontingent verfügbar</strong> (“Copilot Free” direkt in VS Code) mit monatlichen Limits für Chats und Code-Vorschläge. Komplett gratis für Studierende und Open-Source-Maintainer.</td>
+</tr>
+<tr class="even">
+<td><strong>Live-Demo-Use-Case</strong></td>
+<td><strong>Neue Folien in Präsentation mit Chart</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Demo-Prompt:</strong></p>
+<pre><code>Erstelle mir eine neue Folie in der aktuellen Quarto Präsentation in Zeile XXX mit einer Auswertung über die Zufriedenheit der Workshopteilnehmer. Stelle es in einem Mermaid Pie Chart dar. 20 Prozent sind zufrieden, 80 Prozent nicht zufrieden.</code></pre>
+</section>
+<section id="github-copilot-wie-es-funktioniert" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="github-copilot-wie-es-funktioniert"><span class="header-section-number">8.3</span> GitHub Copilot – Wie es funktioniert</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">sequenceDiagram
+    participant Dev as 👩‍💻 Entwickler:in (VS Code)
+    participant Ext as ⚙️ Copilot Extension
+    participant Cloud as ☁️ Microsoft / GitHub Cloud
+
+    Dev-&gt;&gt;Ext: Schreibt Code oder Kommentar
+    Ext-&gt;&gt;Cloud: Sendet Kontext (Cursor-Umgebung, Datei, Sprache)
+    Cloud-&gt;&gt;Cloud: LLM analysiert Kontext &amp; generiert Vorschlag
+    Cloud-&gt;&gt;Ext: Gibt Codevorschlag zurück
+    Ext-&gt;&gt;Dev: Zeigt Inline-Vorschlag (grau) im Editor
+    Dev-&gt;&gt;Dev: Tab = übernehmen · Esc = ablehnen
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Kernprinzip:</strong> Copilot liest den Code rund um den Cursor und schlägt passende Fortsetzungen vor – wie eine sehr intelligente Autovervollständigung, die den gesamten Dateikontext versteht.</p>
+</div>
+</div>
+</section>
+<section id="google-notebooklm" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="google-notebooklm"><span class="header-section-number">8.4</span> Google NotebookLM</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aspekt</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Funktionsweise</strong></td>
+<td>KI-Forschungsassistent, der exklusiv auf <strong>hochgeladenen Dokumenten</strong> (PDFs, Notizen, Links) basiert. Erstellt fehlerfreie Zusammenfassungen mit Quellenbelegen und generiert Audio-Briefings im Podcast-Stil.</td>
+</tr>
+<tr class="even">
+<td><strong>Hosting &amp; Datenschutz</strong></td>
+<td><strong>Cloud (USA - Google)</strong>. Hochgeladene Dokumente und Chat-Verläufe werden laut Google <em>nicht</em> zum Training öffentlicher Modelle genutzt. Dennoch ungeeignet für hochsensible, personenbezogene Felddaten.</td>
+</tr>
+<tr class="odd">
+<td><strong>Preise &amp; Free Tier</strong></td>
+<td><strong>Dauerhaftes Free Tier vorhanden</strong>. Sehr großzügig (bis zu 100 Notebooks mit je 50 Quellen erlaubt). Ein tägliches Limit existiert lediglich für die Generierung der Audio-Podcasts.</td>
+</tr>
+<tr class="even">
+<td><strong>Live-Demo-Use-Case</strong></td>
+<td><strong>Abschlussbericht Simon Kloker</strong></td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://notebooklm.google.com/">https://notebooklm.google.com/</a></p>
+</section>
+<section id="google-gemini-omni-video" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="google-gemini-omni-video"><span class="header-section-number">8.5</span> Google Gemini Omni (Video)</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aspekt</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Funktionsweise</strong></td>
+<td>Natives, multimodales KI-Medienmodell. Erzeugt hochauflösende Videos (bis 1080p) inklusive <strong>vollkommen synchronisiertem Ton</strong> (Sprache, Soundeffekte) in einem Schritt. Erlaubt die Bearbeitung bestehender Clips per Text-Chat.</td>
+</tr>
+<tr class="even">
+<td><strong>Hosting &amp; Datenschutz</strong></td>
+<td><strong>Cloud (USA - Google)</strong>. Alle generierten Videos werden automatisch mit dem unsichtbaren digitalen Wasserzeichen <strong>SynthID</strong> markiert, um sie als KI-Inhalte zu kennzeichnen.</td>
+</tr>
+<tr class="odd">
+<td><strong>Preise &amp; Free Tier</strong></td>
+<td><strong>Kostenloser Einstieg verfügbar</strong> (über Google Flow / Google Labs Framework) mit einem monatlichen Credit-Kontingent. Höhere Auflösungen und unbegrenzte Nutzung erfordern Google AI Plus/Pro Tarife.</td>
+</tr>
+<tr class="even">
+<td><strong>Live-Demo-Use-Case</strong></td>
+<td><strong>Bild/Video zur richtigen Nutzung einer Hacke</strong></td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://labs.google/fx/tools/flow/">https://labs.google/fx/tools/flow/</a></p>
+<p><strong>Demo-Prompt:</strong></p>
+<pre><code>The video showcases a how to in a rural ugandan setting. It is showing how to correctly use a hoe so that your back is protected from injuries. Let the person be from the setting and stand on a sweet potato field.</code></pre>
+</section>
+<section id="weitere-tools-die-sich-anzuschauen-lohnen" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="weitere-tools-die-sich-anzuschauen-lohnen"><span class="header-section-number">8.6</span> Weitere Tools, die sich anzuschauen lohnen</h2>
+<ul>
+<li>Eleven Labs (TTS mit Voice Cloning)</li>
+<li>Microsoft Designer (Bildgenerierung mit Kontext)</li>
+<li>Google Gemini (LLM mit Multimodalität)</li>
+<li>Mistral (Europäisches LLM mit Fokus auf Datenschutz)</li>
+<li>…</li>
+</ul>
+</section>
+<section id="und-viel-mehr" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="und-viel-mehr"><span class="header-section-number">8.7</span> Und viel mehr…</h2>
+</section>
+</section>
+<section id="workshop-teil-eigener-use-case-kreieren-45-minuten" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Workshop-Teil: Eigener Use-case kreieren (45 Minuten)</h1>
+<p><strong>Ziel:</strong></p>
+<p>Jede Gruppe entwickelt einen realistischen Mini-Use-Case</p>
+<ul>
+<li>einem konkreten Problem aus dem eigenen Kontext</li>
+<li>dem erwarteten Nutzen durch KI</li>
+<li>den Risiken und Herausforderungen</li>
+<li>einem “nächsten Schritt”, um in 2 Wochen einen kleinen Pilot zu starten (hypothetisch)</li>
+</ul>
+<div class="fragment">
+<ul>
+<li><strong>+ all eure offenen Fragen!</strong></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Format:</strong></p>
+<ul>
+<li>Gruppen à 3-4 Personen in Breakout-Räumen</li>
+<li>45 Minuten Zeit, um den Use-Case zu entwickeln und einen kurzen Pitch vorzubereiten</li>
+<li>Am Ende präsentiert jede Gruppe ihren Use-Case in 2 Minuten, gefolgt von 2 Minuten Feedback aus der Gesamtgruppe.</li>
+</ul>
+</div>
+</section>
+<section id="gesprächsrunde-4-vorstellung-von-ideen-und-feedback" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Gesprächsrunde 4: Vorstellung von Ideen und Feedback</h1>
+<p><strong>📢 Pitch-Format:</strong></p>
+<ul>
+<li>Pro Gruppe 2 Minuten Pitch + 2 Minuten Feedback.</li>
+<li>Feedback nur in zwei Kategorien:
+<ul>
+<li>“Das stärkt den Use-Case”</li>
+<li>“Das braucht Absicherung”</li>
+</ul></li>
+</ul>
+<p><strong>Worauf hier Wert legen:</strong></p>
+<ul>
+<li>Feedback konstruktiv und umsetzungsorientiert halten.</li>
+</ul>
+</section>
+<section id="frage-antwort-10-minuten" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Frage &amp; Antwort (10 Minuten)</h1>
+<p><strong>This slide is intentionally left blank for Q&amp;A.</strong></p>
+</section>
+<section id="key-takeaways" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Key Takeaways</h1>
+<div class="fragment">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Haltung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Skepsis und Interesse können gleichzeitig existieren!</p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Kultur
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>KI ist kulturell geprägt - sowohl in den Ergebnissen als auch in der Nutzung!</p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Es hängt vom Anwendungsfall und Kontext ab!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Es gibt bereits viele praktische Anwendungsfälle, die in der Entwicklungszusammenarbeit relevant sind!</p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Toolauswahl
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Es gibt eine Vielzahl von KI-Tools, die je nach Anwendungsfall und Kontext genutzt werden können - wichtig ist dabei immer die Abwägung von Nutzen und Risiken! (Wir haben Datenschutz etc. nur angerissen…)</p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>KI bedeutet Veränderung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>KI betrifft und VERÄNDERT jeden Bereich. Es ist wichtig sprachfähig zu sein, gestaltungsfähig zu sein und sich selbst und auch andere in den neuen Spannungsfeldern zu begleiten und Orientierung zu geben.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="kontakt" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> Kontakt</h1>
+<p>Simon Kloker</p>
+<p>simon.kloker@mail.de</p>
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-alammar2024handson" class="csl-entry" role="listitem">
+Alammar, Jan, and Maarten Grootendorst. 2024. <em>Hands-on Large Language Models: Language Understanding and Generation</em>. O’Reilly Media.
+</div>
+<div id="ref-the_decoder_graham_ai_2026" class="csl-entry" role="listitem">
+Bastian, Matthias. 2026. <em>Y Combinator Founder Paul Graham Says AI-Written Founder Emails Feel "Like Being Lied to"</em>. The Decoder; <a href="https://the-decoder.com/y-combinator-founder-paul-graham-says-ai-written-founder-emails-feel-like-being-lied-to/" class="uri">https://the-decoder.com/y-combinator-founder-paul-graham-says-ai-written-founder-emails-feel-like-being-lied-to/</a>.
+</div>
+<div id="ref-IpsosAIMonitor2024" class="csl-entry" role="listitem">
+Ipsos. 2024. <em>The Ipsos AI Monitor 2024: A 32-Country Ipsos Global Advisor Survey</em>. Global Research Report. Ipsos. <a href="https://www.ipsos.com/sites/default/files/ct/news/documents/2024-06/Ipsos-AI-Monitor-2024-final-APAC.pdf">https://www.ipsos.com/sites/default/files/ct/news/documents/2024-06/Ipsos-AI-Monitor-2024-final-APAC.pdf</a>.
+</div>
+<div id="ref-Jenka2023" class="csl-entry" role="listitem">
+Jenka. 2023. <em>AI and the American Smile</em>. Medium. <a href="https://medium.com/@socialcreature/ai-and-the-american-smile-76d23a0fbfaf">https://medium.com/@socialcreature/ai-and-the-american-smile-76d23a0fbfaf</a>.
+</div>
+<div id="ref-Koelbl2026" class="csl-entry" role="listitem">
+Kölbl, Nikola, Stefan Rampp, Martin Kaltenhäuser, et al. 2026. <span>“Prediction, Syntax and Semantic Grounding in the Brain and Large Language Models.”</span> <em>Scientific Reports</em> 16 (1): 8728. <a href="https://doi.org/10.1038/s41598-026-41532-0">https://doi.org/10.1038/s41598-026-41532-0</a>.
+</div>
+<div id="ref-tupper2024" class="csl-entry" role="listitem">
+Tupper, Angela. 2024. <em>Wordly Live AI Translation and Captioning [Review]</em>. Skift Meetings; <a href="https://meetings.skift.com/reviews/wordly-live-ai-translation-and-captioning-review/" class="uri">https://meetings.skift.com/reviews/wordly-live-ai-translation-and-captioning-review/</a>.
+</div>
+</div></section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
