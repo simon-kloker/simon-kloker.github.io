@@ -18,3 +18,5 @@ package-lock.json
 
 # Ignore folders related to IDEs
 .vscode/
+
+lecture_notes/bwi453_rag/technical_background_1.html
